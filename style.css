@@ -103,32 +103,11 @@ ul#barra-menu .divisor-menu {
 	text-align: center;
     justify-items: center;
 }
-
-.pokemon .img-container {
-	background-color: rgba(255, 255, 255, 0.6);
-	border-radius: 50%;
-	text-align: center;
-    justify-items: center;
-}
-
-.pokemon .img-container img {
-	margin-top: 10px;
-	max-width: 90%;
-}
-
-.poke-container {
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
 .poketype {
     background-color: aqua;
 }
 
 .pokeid {
-    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     font-size: 0.8em;
     padding: 5px 10px;
@@ -136,4 +115,10 @@ ul#barra-menu .divisor-menu {
 .pokename {
     margin: 15px 0 7px;
     letter-spacing: 1px;
+}
+.pokeimg {
+    height: auto;
+    width: 100px;
+
+
 }
