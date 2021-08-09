@@ -34,3 +34,9 @@ const pokeCard = (pokemon) => {
 }
 
 fetchPoke();
+
+document.getElementsByClassName("card").addEventListener("click",click());
+
+function click(){
+    window.alert("deu certo");
+}
