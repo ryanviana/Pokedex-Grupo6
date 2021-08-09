@@ -22,7 +22,7 @@ const pokeCard = (pokemon) => {
     const pokemonHTMLString = pokemon
         .map(
             (pokeman) => `
-        <li class="pokemon">
+        <li onclick="openPokedex()" class="pokemon">
             <img id = "cards" src="${pokeman.image}"/>
             <h2>${pokeman.id} ${pokeman.name}</h2>
             <p>Type: ${pokeman.type}</p>
@@ -34,3 +34,7 @@ const pokeCard = (pokemon) => {
 }
 
 fetchPoke();
+
+function openPokedex() {
+  window.alert("hello");
+}
