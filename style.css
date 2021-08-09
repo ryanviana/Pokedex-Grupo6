@@ -138,3 +138,7 @@ ul#barra-menu .divisor-menu {
     margin: 0 auto;
     max-width: 1200px;
 }
+
+.poketype {
+    background-color: aqua;
+}

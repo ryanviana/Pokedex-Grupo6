@@ -23,8 +23,8 @@ const pokeCard = (pokemon) => {
         .map(
             (pokeman) => `
         <li onclick="openPokedex()" class="pokemon">
-            <img id = "cards" src="${pokeman.image}"/>
-            <h2>${pokeman.id} ${pokeman.name}</h2>
+            <img id = "cards" src="${pokeman.image}" class="pokeimg"/>
+            <h2 class="pokeinfo">${pokeman.id} ${pokeman.name}</h2>
             <p>Type: ${pokeman.type}</p>
         </li>
     `
