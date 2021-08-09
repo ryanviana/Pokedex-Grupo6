@@ -40,12 +40,32 @@ table#barra-titulo {
     border-radius: 25px;
 }
 
-table#barra-menu {
+#barra-menu {
+    list-style: none;
+    padding: 0px;
     text-align: center;
-    display: inline
 }
 
+ul#barra-menu li{
+    display: inline;
+}
 
+.divisor-menu {
+    width: 3px;
+    display: inline;
+    height: 1px;
+    align-content: center;
+    text-align: center;
+    background-color: #464749;
+    border-radius: 1px;
+}
+
+#search-bar {
+    float: right;
+}
+#zenithlogo {
+    float: left;
+}
 
 .pokemon-container {
 
@@ -57,4 +77,5 @@ table#barra-menu {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
+
 
