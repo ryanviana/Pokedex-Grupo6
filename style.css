@@ -116,22 +116,6 @@ ul#barra-menu .divisor-menu {
 	max-width: 90%;
 }
 
-.pokemon .info {
-	margin-top: 20px;
-}
-
-.pokemon .number {
-	background-color: rgba(0, 0, 0, 0.1);
-	border-radius: 10px;
-	font-size: 0.8em;
-	padding: 5px 10px;
-}
-
-.pokemon .name {
-	margin: 15px 0 7px;
-	letter-spacing: 1px;
-}
-
 .poke-container {
     align-items: center;
     justify-content: center;
@@ -141,4 +125,15 @@ ul#barra-menu .divisor-menu {
 
 .poketype {
     background-color: aqua;
+}
+
+.pokeid {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-size: 0.8em;
+    padding: 5px 10px;
+}
+.pokename {
+    margin: 15px 0 7px;
+    letter-spacing: 1px;
 }
