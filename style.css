@@ -95,7 +95,7 @@ ul#barra-menu .divisor-menu {
     display: inline-flex;
 	border-radius: 20px;
     height: auto;
-    width: auto;
+    width: 250px;
 	box-shadow: 0px 3px 15px rgba(100, 100, 100, 0.5);
 	margin: 35px;
 	padding: 50px;
