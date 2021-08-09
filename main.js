@@ -23,7 +23,7 @@ const pokeCard = (pokemon) => {
         .map(
             (pokeman) => `
         <li class="pokemon">
-            <img src="${pokeman.image}"/>
+            <img id = "cards" src="${pokeman.image}"/>
             <h2>${pokeman.id} ${pokeman.name}</h2>
             <p>Type: ${pokeman.type}</p>
         </li>
@@ -34,9 +34,3 @@ const pokeCard = (pokemon) => {
 }
 
 fetchPoke();
-
-document.getElementsByClassName("card").addEventListener("click",click());
-
-function click(){
-    window.alert("deu certo");
-}
