@@ -1,4 +1,4 @@
-const pokeContainer = document.getElementById ('poke_container');
+const pokeContainer = document.getElementById ('pokeContainer');
 const pokeNumber = 150;
 
 const getPoke = async id => {
@@ -23,10 +23,10 @@ const pokeCard = (pokemon) => {
             <small class="type">Type: <span>${type}</span></small>
         </div>`
     pokeElement.innerHTML = pokeInnerHTML;
-    pokeContainer.appendChild (pokeElement);
+        pokeContainer.appendChild (pokeElement);
 }
 
-const fetchPoke = async => {
+const fetchPoke = async () => {
     for (let i = 1; i <= 150; i++){
         await getPoke (i);
     }
