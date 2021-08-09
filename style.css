@@ -50,22 +50,31 @@ ul#barra-menu li{
     display: inline;
 }
 
-.divisor-menu {
-    width: 3px;
-    display: inline;
-    height: 1px;
-    align-content: center;
-    text-align: center;
-    background-color: #464749;
-    border-radius: 1px;
+ul#barra-menu .divisor-menu {
+    background-color: aqua;
+    width: 10px;
+    height: 10px;
+}
+
+
+#barra-menu button, label{
+    float: right;
 }
 
 #search-bar {
     float: right;
 }
+
 #zenithlogo {
+    margin-top: 13px;
+    height:30px;
+    width: 100px;
+    object-fit: cover;
+    margin-left: 20px;
     float: left;
 }
+
+
 
 .pokemon-container {
 
