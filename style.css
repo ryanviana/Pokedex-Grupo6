@@ -116,8 +116,12 @@ ul#barra-menu .divisor-menu {
     left: 31px;
     display: flex;
     justify-content: center;
-    align-items: left;
 }
+.search-bar {
+    margin-right: 20px;
+}
+
+
 
 .search-bar .input input{
     position: relative;
