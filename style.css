@@ -27,6 +27,24 @@ table#barra-titulo {
 }
 
 
+.pokebola {
+    margin-top: 27px ;
+    margin-left: 5px;
+    animation: shake 1.75s cubic-bezier(.36,.07,.19,.97) infinite;
+    animation-play-state: paused;
+}
+.pokebola:hover{
+    animation-play-state: running;
+}
+@keyframes shake {
+0 { transform: translate(0, 0) rotate(0); }
+20% { transform: translate(-3px, 0) rotate(-20deg); }
+30% { transform: translate(3px, 0) rotate(20deg); }
+50% { transform: translate(-3px, 0) rotate(-10deg); }
+60% { transform: translate(3px, 0) rotate(10deg); }
+100% { transform: translate(0, 0) rotate(0); }
+}
+
 
 .menu-container {
     margin-top: 10px;

@@ -34,6 +34,11 @@ const pokeCard = (pokemon) => {
         .join('');
     pokeContainer.innerHTML = pokemonHTMLString;
 }
+// função ani() -> realiza a animação do icone da pokebola
+function ani() {
+    document.getElementById('img-pkb').className = 'pokebola';
+}
+
 
 fetchPoke();
 
