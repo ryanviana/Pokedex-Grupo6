@@ -89,7 +89,7 @@ ul#barra-menu .divisor-menu {
 }
 
 .pokemon {
-	background-color: #ffffff;
+	background-color: #8C8C8C;
     display: inline-table;
 	border-radius: 20px;
     height: 100px;
@@ -103,7 +103,7 @@ ul#barra-menu .divisor-menu {
 }
 
 .poketype {
-    background-color: grey;
+    background-color: #C4C4C4;
     border-radius: 20px;
     height: 20px;
     width: 150px;
