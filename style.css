@@ -90,14 +90,14 @@ ul#barra-menu .divisor-menu {
 
 .pokemon {
 	background-color: #ffffff;
-    display: inline-grid;
+    display: inline-table;
 	border-radius: 20px;
     height: 100px;
     width: 40px;
 	box-shadow: 0px 3px 15px rgba(100, 100, 100, 0.5);
 	margin: 15px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
 	text-align: center;
     justify-items: center;
 }
@@ -113,6 +113,7 @@ ul#barra-menu .divisor-menu {
     display: inline;
     font-size: 0.9em;
 }
+
 .pokeimg {
     height: auto;
     width: 100px;
