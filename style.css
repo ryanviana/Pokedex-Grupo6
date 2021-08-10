@@ -56,15 +56,6 @@ ul#barra-menu .divisor-menu {
     height: 10px;
 }
 
-
-#barra-menu button, label{
-    float: right;
-}
-
-#search-bar {
-    float: right;
-}
-
 #zenithlogo {
     margin-top: 13px;
     height:30px;
@@ -74,7 +65,69 @@ ul#barra-menu .divisor-menu {
     float: left;
 }
 
+.search-bar {
+    margin-top: 13px;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.466);
+    border-radius: 30px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 1px #404853;
+    overflow: hidden;
+}
+.search-bar.active {
+    width: 180px;
+}
+.search-bar .icon {
+    position: relative;
+    top: 0;
+    left: 1px;
+    width: 180px;
+    height: 30px;
+    background: #fff;
+    border-radius: 60px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
 
+.search-bar .icon::before {
+    position: relative;
+    width: 7.5px;
+    height: 7.5px;
+    border: 1.5px solid #404853;
+    border-radius: 50%; 
+}
+
+.search-bar .icon::after {
+    position: relative;
+    width: 1.5px;
+    height: 6px;
+    background: #404853; 
+}
+
+.search-bar .input {
+    position: relative;
+    top: -30px;
+    height:30px;
+    left: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+}
+
+.search-bar .input input{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
 
 .bottom-container {
     overflow-y: scroll;

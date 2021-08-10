@@ -33,9 +33,23 @@
         <li class="divisor-menu"></li>
         <li><a>Alguma coisa aqui</a></li>
         <li class="divisor-menu"></li>
-        <li><label for="search-bar">Search</label></li>
-        <li><input type="text" name="Search" id="search-bar" placeholder="Ex: Pikachu, 001223"></li>
-        <li><button type="submit">submit</button></li>
+        <li><div class="search-bar">
+                <div class="icon">
+                    <img src="Fotos_gifs/pokeball1.png" height="30px">
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Search for Pokemon" id="mySearch">
+                </div>
+            </div>
+        
+            <script>
+                const icon = document.querySelector('.icon');
+                const search = document.querySelector('.search-bar');
+                icon.onclick = function(){
+                    search.classList.toggle('active');
+                }
+            </script>
+        </li>
     </ul>
 </div>
 
