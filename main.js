@@ -23,11 +23,14 @@ const pokeCard = (pokemon) => {
         .map(
             (pokeman) => `
         <li onclick="openPokedex()" class="pokemon">
-            <img id = "cards" src="${pokeman.image}"/>
-            <h2>${pokeman.id} ${pokeman.name}</h2>
-            <p>Type: ${pokeman.type}</p>
+            <img id = "cards" src="${pokeman.image}" class="pokeimg"/>
+            
+            <h2 class="pokeinfo">${pokeman.name} - ${pokeman.id}</h2
+            <br>
+            <p class="poketype">${pokeman.type}</p>
+
         </li>
-    `
+         `
         )
         .join('');
     pokeContainer.innerHTML = pokemonHTMLString;
@@ -36,5 +39,5 @@ const pokeCard = (pokemon) => {
 fetchPoke();
 
 function openPokedex() {
-  window.alert("hello");
+    window.alert("poxa");
 }
