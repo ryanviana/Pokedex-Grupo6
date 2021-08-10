@@ -110,11 +110,15 @@ ul#barra-menu .divisor-menu {
 }
 
 .pokeinfo {
-    display: inline;
+    display: inline-table;
     font-size: 0.9em;
 }
 
 .pokeimg {
+    margin-left: 20px;
+    display: list-item;
+    justify-content: center;
+    text-align: center;
     height: auto;
     width: 100px;
 }
