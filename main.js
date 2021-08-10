@@ -24,7 +24,6 @@ const pokeCard = (pokemon) => {
             (pokeman) => `
         <li onclick="openPokedex()" class="pokemon">
             <img id = "cards" src="${pokeman.image}" class="pokeimg"/>
-            
             <h2 class="pokeinfo">${pokeman.name} - ${pokeman.id}</h2
             <br>
             <p class="poketype">${pokeman.type}</p>
