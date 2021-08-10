@@ -107,6 +107,7 @@ ul#barra-menu .divisor-menu {
 }
 
 .poketype {
+    color: #524e4e;
     background-color: #C4C4C4;
     border-radius: 20px;
     height: 20px;
@@ -114,6 +115,7 @@ ul#barra-menu .divisor-menu {
 }
 
 .pokeinfo {
+    color: #2d2b2b;
     display: inline-table;
     font-size: 0.9em;
 }
