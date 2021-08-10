@@ -11,7 +11,7 @@ const fetchPoke = async () => {
         const pokemon = results.map((result) => ({
             name: result.name,
             image: result.sprites['front_default'],
-            type: result.types.map((type) => type.type.name).join(', '),
+            type: result.types.map((type) => type.type.name),
             id: result.id
         }));
         pokeCard(pokemon);
@@ -26,8 +26,7 @@ const pokeCard = (pokemon) => {
             <img id = "cards" src="${pokeman.image}" class="pokeimg"/>
             <h2 class="pokeinfo">${pokeman.name} - ${pokeman.id}</h2
             <br>
-            <p class="poketype">${pokeman.type}</p>
-
+            <p class="poketype">${pokeman.type [0]}</p>
         </li>
          `
         )
