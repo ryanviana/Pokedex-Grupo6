@@ -29,8 +29,8 @@ table#barra-titulo {
 
 
 .menu-container {
-    margin-top: 30px;
-    width: 95%;
+    margin-top: 10px;
+    width: 98%;
     height: 60px;
     margin-left: auto;
     margin-right: auto;
@@ -74,8 +74,6 @@ ul#barra-menu .divisor-menu {
     float: left;
 }
 
-
-
 .bottom-container {
     overflow-y: scroll;
     flex-direction: column;
@@ -85,14 +83,14 @@ ul#barra-menu .divisor-menu {
     opacity: 90%;
     width: 100%;
     height: 500px;
-    margin-top: 40px;
+    margin-top: 20px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
 
 .pokemon {
 	background-color: #ffffff;
-    display: inline-table;
+    display: inline-grid;
 	border-radius: 20px;
     height: 100px;
     width: 40px;
@@ -102,6 +100,13 @@ ul#barra-menu .divisor-menu {
     padding-left: 20px;
 	text-align: center;
     justify-items: center;
+}
+
+.poketype {
+    background-color: grey;
+    border-radius: 20px;
+    height: 20px;
+    width: 150px;
 }
 
 .pokeinfo {
