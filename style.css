@@ -82,8 +82,7 @@ ul#barra-menu .divisor-menu {
 .search-bar .icon {
     position: relative;
     top: 0;
-    left: 1px;
-    width: 180px;
+    width: 30px;
     height: 30px;
     background: #fff;
     border-radius: 60px;
@@ -98,7 +97,7 @@ ul#barra-menu .divisor-menu {
     position: relative;
     width: 7.5px;
     height: 7.5px;
-    border: 1.5px solid #404853;
+    border: 1.5px solid #fff;
     border-radius: 50%; 
 }
 
@@ -106,7 +105,7 @@ ul#barra-menu .divisor-menu {
     position: relative;
     width: 1.5px;
     height: 6px;
-    background: #404853; 
+    background: #fff; 
 }
 
 .search-bar .input {
@@ -130,7 +129,7 @@ ul#barra-menu .divisor-menu {
     height: 100%;
     border: none;
     outline: none;
-    font-size: 18px;
+    font-size: 16px;
 }
 .bottom-container {
     overflow-y: scroll;
