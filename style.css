@@ -181,17 +181,22 @@ ul#barra-menu .divisor-menu {
 }
 
 .poketype {
+    display:inline;
     color: #524e4e;
     background-color: #C4C4C4;
     border-radius: 20px;
     height: 20px;
-    width: 150px;
+    width: 85px;
+    margin-top: 15px;
+    margin-right: 10px;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 10px;
 }
 
 .pokeinfo {
     color: #2d2b2b;
-    display: inline-table;
-    font-size: 1.0em;
+    font-size: 0.8em;
     font-family: "DM Sans", sans-serif;
 }
 
@@ -203,3 +208,4 @@ ul#barra-menu .divisor-menu {
     height: auto;
     width: 100px;
 }
+
