@@ -63,17 +63,17 @@ function buildCard(pokemon, i) {
         <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
         <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2>
         <br>
-        <div class="poketype">
+        <div>
         `);
     for(let j = 0; j < pokemon[i].type.length; j++) {
         pokemonHTMLCardRaw.push(`
-            <div class="${pokemon[i].type[j]}">
-                <p> ${pokemon[i].type[j]} </p>
+            <l class="poketype">${pokemon[i].type[j]} <br></l>
             </div>
         `);
     }
     pokemonHTMLCardRaw.push(`
             </div>
+            <br>
         </li>
     `)
     const pokemonHTMLCardFinal = pokemonHTMLCardRaw.join(' ');
