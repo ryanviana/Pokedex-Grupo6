@@ -46,19 +46,21 @@ function ani() {
 fetchPoke();
 
 function openPokedex(i) {
-    window.alert(i);
+    promises=[];
     id = i+1;
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    promises.push(fetch(url).then((res) => res.json()));
+
     Promise.all(promises).then((results) => {
         const pokemon = results.map((result) => ({
             name: result.name,
             image: result.sprites['front_default'],
             type: result.types.map((type) => type.type.name),
             id: result.id,
-            height: result.height,
-            weight: result.weight,
+            height: (result.height)/10,
+            weight: (result.weight)/10,
             stats: result.stats,
-            forms: result.forms,
+            ability: result.abilities.map((ability) => ability.ability.name)
         }));
     });
 }
@@ -70,20 +72,19 @@ function buildCard(pokemon, i) {
         <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
         <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2>
         <br>
-        <div class="poketype">
+        <div>
         `);
     for(let j = 0; j < pokemon[i].type.length; j++) {
         pokemonHTMLCardRaw.push(`
-            <div class="${pokemon[i].type[j]}">
-                <p> ${pokemon[i].type[j]} </p>
+            <l class="poketype">${pokemon[i].type[j]} <br></l>
             </div>
         `);
     }
     pokemonHTMLCardRaw.push(`
             </div>
+            <br>
         </li>
     `)
     const pokemonHTMLCardFinal = pokemonHTMLCardRaw.join(' ');
     return pokemonHTMLCardFinal;
-
 }
