@@ -4,7 +4,7 @@ const pokeNumber = 150;
 const fetchPoke = async () => {
     const promises = [];
     
-    for (let i = 1; i <= 150; i++){
+    for (let i = 1; i <= pokeNumber; i++){
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     }
@@ -21,7 +21,7 @@ const fetchPoke = async () => {
 
 const pokeCard = (pokemon) => {
     const pokemonHTMLStringRaw = [];
-    for (let i = 0; i < 150; i++){
+    for (let i = 0; i < pokeNumber; i++){
         pokemonHTMLStringRaw.push(buildCard(pokemon, i));
     }
     const pokemonHTMLStringFinal = pokemonHTMLStringRaw.join(' ');
@@ -38,6 +38,20 @@ fetchPoke();
 
 function openPokedex(i) {
     window.alert(i);
+    id = i+1;
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    Promise.all(promises).then((results) => {
+        const pokemon = results.map((result) => ({
+            name: result.name,
+            image: result.sprites['front_default'],
+            type: result.types.map((type) => type.type.name),
+            id: result.id,
+            height: result.height,
+            weight: result.weight,
+            stats: result.stats,
+            forms: result.forms,
+        }));
+    });
 }
 
 function buildCard(pokemon, i) {
