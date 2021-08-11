@@ -15,14 +15,23 @@ const fetchPoke = async () => {
             type: result.types.map((type) => type.type.name),
             id: result.id
         }));
-        pokeCard(pokemon);
+        const pokeNames = [];
+        for(let i = 0; i < pokeNumber; i++) {
+            pokeNames.push(pokemon[i].name);
+        }
+        console.log(pokeNames);
+
+        let desiredPokemons = pokeNames
+        pokeCard(pokemon, desiredPokemons);
     });
 }
 
-const pokeCard = (pokemon) => {
+const pokeCard = (pokemon, desiredPokemons) => {
     const pokemonHTMLStringRaw = [];
     for (let i = 0; i < pokeNumber; i++){
-        pokemonHTMLStringRaw.push(buildCard(pokemon, i));
+        if(desiredPokemons.includes(pokemon[i].name)) {
+            pokemonHTMLStringRaw.push(buildCard(pokemon, i));
+        }
     }
     const pokemonHTMLStringFinal = pokemonHTMLStringRaw.join(' ');
     pokeContainer.innerHTML = pokemonHTMLStringFinal;
