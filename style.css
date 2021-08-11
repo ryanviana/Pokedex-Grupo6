@@ -194,6 +194,10 @@ ul#barra-menu .divisor-menu {
     margin-bottom: 10px;
 }
 
+.poketype .grass {
+    background-color: #3cf703;
+}
+
 .pokeinfo {
     color: #2d2b2b;
     font-size: 0.8em;

@@ -15,7 +15,6 @@ const fetchPoke = async () => {
             type: result.types.map((type) => type.type.name),
             id: result.id
         }));
-        console.log(pokemon[0].type[1]);
         pokeCard(pokemon);
     });
 }
@@ -29,7 +28,11 @@ const pokeCard = (pokemon) => {
                 <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
                 <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2
                 <br>
-                <p class="poketype">${pokemon[i].type [0]}</p>
+                <div class="poketype">
+                    <div class="${pokemon[i].type[0]}">
+                        <p> ${pokemon[i].type [0]} </p>
+                    </div>
+                </div>
             </li>
             `)
         }
@@ -37,10 +40,16 @@ const pokeCard = (pokemon) => {
             pokemonHTMLString.push (`
             <li onclick="openPokedex(${i})" class="pokemon">
                 <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
-                <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2
+                <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2>
                 <br>
-                <p class="poketype">${pokemon[i].type [0]}</p>
-                <p class="poketype">${pokemon[i].type [1]}</p>
+                <div class="poketype">
+                    <div class="${pokemon[i].type[0]}">
+                        <p> ${pokemon[i].type [0]} </p>
+                    </div>
+                    <div class="${pokemon[i].type[1]}">
+                        <p>${pokemon[i].type[1]}</p>
+                    </div>
+                </div>
             </li>
             `)
         }
