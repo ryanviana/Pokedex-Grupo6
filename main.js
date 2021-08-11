@@ -25,7 +25,7 @@ const pokeCard = (pokemon) => {
     for (let i = 0; i < 150; i++){
         if (pokemon[i].type[1] == undefined){
             pokemonHTMLString.push (`
-            <li onclick="openPokedex()" class="pokemon">
+            <li onclick="openPokedex(${i})" class="pokemon">
                 <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
                 <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2
                 <br>
@@ -35,11 +35,12 @@ const pokeCard = (pokemon) => {
         }
         else {
             pokemonHTMLString.push (`
-            <li onclick="openPokedex()" class="pokemon">
+            <li onclick="openPokedex(${i})" class="pokemon">
                 <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
                 <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2
                 <br>
-                <p class="poketype">${pokemon[i].type [0]} ${pokemon[i].type [1]}</p>
+                <p class="poketype">${pokemon[i].type [0]}</p>
+                <p class="poketype">${pokemon[i].type [1]}</p>
             </li>
             `)
         }
@@ -55,6 +56,6 @@ function ani() {
 
 fetchPoke();
 
-function openPokedex() {
-    window.alert("poxa");
+function openPokedex(i) {
+    window.alert(i);
 }
