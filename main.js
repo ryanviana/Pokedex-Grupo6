@@ -20,41 +20,12 @@ const fetchPoke = async () => {
 }
 
 const pokeCard = (pokemon) => {
-    const pokemonHTMLString = [];
+    const pokemonHTMLStringRaw = [];
     for (let i = 0; i < 150; i++){
-        if (pokemon[i].type[1] == undefined){
-            pokemonHTMLString.push (`
-            <li onclick="openPokedex(${i})" class="pokemon">
-                <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
-                <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2
-                <br>
-                <div class="poketype">
-                    <div class="${pokemon[i].type[0]}">
-                        <p> ${pokemon[i].type [0]} </p>
-                    </div>
-                </div>
-            </li>
-            `)
-        }
-        else {
-            pokemonHTMLString.push (`
-            <li onclick="openPokedex(${i})" class="pokemon">
-                <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
-                <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2>
-                <br>
-                <div class="poketype">
-                    <div class="${pokemon[i].type[0]}">
-                        <p> ${pokemon[i].type [0]} </p>
-                    </div>
-                    <div class="${pokemon[i].type[1]}">
-                        <p>${pokemon[i].type[1]}</p>
-                    </div>
-                </div>
-            </li>
-            `)
-        }
+        pokemonHTMLStringRaw.push(buildCard(pokemon, i));
     }
-    pokeContainer.innerHTML = pokemonHTMLString;
+    const pokemonHTMLStringFinal = pokemonHTMLStringRaw.join(' ');
+    pokeContainer.innerHTML = pokemonHTMLStringFinal;
 }
 
 // função ani() -> realiza a animação do icone da pokebola
@@ -67,4 +38,29 @@ fetchPoke();
 
 function openPokedex(i) {
     window.alert(i);
+}
+
+function buildCard(pokemon, i) {
+    const pokemonHTMLCardRaw = [];
+    pokemonHTMLCardRaw.push(`
+        <li onclick="openPokedex(${i})" class="pokemon">
+        <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
+        <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2>
+        <br>
+        <div class="poketype">
+        `);
+    for(let j = 0; j < pokemon[i].type.length; j++) {
+        pokemonHTMLCardRaw.push(`
+            <div class="${pokemon[i].type[j]}">
+                <p> ${pokemon[i].type[j]} </p>
+            </div>
+        `);
+    }
+    pokemonHTMLCardRaw.push(`
+            </div>
+        </li>
+    `)
+    const pokemonHTMLCardFinal = pokemonHTMLCardRaw.join(' ');
+    return pokemonHTMLCardFinal;
+
 }
