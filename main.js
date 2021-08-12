@@ -55,7 +55,7 @@ function buildCard(pokemon, i) {
     pokemonHTMLCardRaw.push(`
         <li onclick="openPokedex(${i})" class="pokemon">
         <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
-        <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2>
+        <h2 class="pokeinfo">${capitalize(pokemon[i].name)} - ${pokemon[i].id}</h2>
         <br>
         `);
     for(let j = 0; j < pokemon[i].type.length; j++) {
@@ -69,4 +69,11 @@ function buildCard(pokemon, i) {
     `)
     const pokemonHTMLCardFinal = pokemonHTMLCardRaw.join(' ');
     return pokemonHTMLCardFinal;
+}
+
+const capitalize = str => {
+	if (typeof str !== 'string') {
+		return '';
+	}
+	return str.charAt(0).toUpperCase() + str.substr(1);
 }

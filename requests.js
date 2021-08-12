@@ -12,7 +12,7 @@ class PoketMonsterCard {
 
 let pokemon = [];
 let pokeNames = [];
-
+let serverERROR = 0;
 const fetchPoke = async () => {
     const promises = [];
     
@@ -39,9 +39,19 @@ const fetchPoke = async () => {
 
 const pokeCard = (pokemon, desiredPokemons) => {
     const pokemonHTMLStringRaw = [];
+    let printedCards = 0;
     for (let i = 0; i < pokeNumber; i++){
         if(desiredPokemons.includes(pokemon[i].name)) {
             pokemonHTMLStringRaw.push(buildCard(pokemon, i));
+            printedCards++;
+        }
+    }
+    if(printedCards == 0 && serverERROR == 0) {
+        pokemonHTMLStringRaw.push(`<p class="errormessage"> Sorry!! We haven't found any Pokemon that matches your search!</p>`);
+    }
+    else {
+        if(serverERROR == 1) {
+            pokemonHTMLStringRaw.push(`<p class="errormessage"> Sorry!! We were unsuccessful in accessing the database of PokeAPI!</p>`);
         }
     }
     const pokemonHTMLStringFinal = pokemonHTMLStringRaw.join(' ');
