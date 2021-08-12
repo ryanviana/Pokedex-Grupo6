@@ -1,5 +1,7 @@
 .opacityBlack {
     background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 621px;
 }
 
 .bg {
@@ -164,7 +166,8 @@ ul#barra-menu li{
     opacity: 90%;
     width: 100%;
     height: 431px;
-    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
