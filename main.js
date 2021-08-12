@@ -1,48 +1,34 @@
-const pokeContainer = document.getElementById ('pokeContainer');
-const pokeNumber = 150;
+const searchWrapper = document.querySelector(".input");
+const InputBox = searchWrapper.querySelector("input")
 
-const fetchPoke = async () => {
-    const promises = [];
-    
-    for (let i = 1; i <= pokeNumber; i++){
-        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        promises.push(fetch(url).then((res) => res.json()));
-    }
-    Promise.all(promises).then((results) => {
-        const pokemon = results.map((result) => ({
-            name: result.name,
-            image: result.sprites['front_default'],
-            type: result.types.map((type) => type.type.name),
-            id: result.id
-        }));
-        const pokeNames = [];
-        for(let i = 0; i < pokeNumber; i++) {
-            pokeNames.push(pokemon[i].name);
+function beginWith(string ,query) {
+    let len = query.length;
+    let number_matches = 0;
+    for(let i = 0; i < len; i++) {
+        if(string[i] == query[i]) {
+            number_matches++;
         }
-        console.log(pokeNames);
-        let desiredPokemons = pokeNames;
-        pokeCard(pokemon, desiredPokemons);
-    });
+    }
+    if(number_matches == (len)) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
-const pokeCard = (pokemon, desiredPokemons) => {
-    const pokemonHTMLStringRaw = [];
-    for (let i = 0; i < pokeNumber; i++){
-        if(desiredPokemons.includes(pokemon[i].name)) {
-            pokemonHTMLStringRaw.push(buildCard(pokemon, i));
-        }
-    }
-    const pokemonHTMLStringFinal = pokemonHTMLStringRaw.join(' ');
-    pokeContainer.innerHTML = pokemonHTMLStringFinal;
+InputBox.onkeyup = (e)=>{
+    let trainerData = e.target.value;
+    let desiredPokemons = [];
+    desiredPokemons = pokeNames.filter(poke => beginWith(poke, trainerData));
+    console.log(desiredPokemons);
+    pokeCard(pokemon, desiredPokemons);
 }
 
 // função ani() -> realiza a animação do icone da pokebola
 function ani() {
     document.getElementById('img-pkb').className = 'pokebola';
 }
-
-
-fetchPoke();
 
 function openPokedex(i) {
     promises=[];
