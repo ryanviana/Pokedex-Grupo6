@@ -1,0 +1,157 @@
+
+.bg {
+    width: 100%;
+    height: 700px;
+    background-image: url('./Fotos_gifs/bgpokemon.gif');
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+    background-position: center;
+
+}
+
+.title-container {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 26px;
+}
+
+table#barra-titulo {
+    text-align: center;
+    display: inline;
+}
+
+
+.pokebola {
+    margin-top: 27px ;
+    margin-left: 5px;
+    animation: shake 1.75s cubic-bezier(.36,.07,.19,.97) infinite;
+    animation-play-state: paused;
+}
+.pokebola:hover{
+    animation-play-state: running;
+}
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0); }
+    20% { transform: translate(-3px, 0) rotate(-20deg); }
+    30% { transform: translate(3px, 0) rotate(20deg); }
+    50% { transform: translate(-3px, 0) rotate(-10deg); }
+    60% { transform: translate(3px, 0) rotate(10deg); }
+    100% { transform: translate(0, 0) rotate(0); }
+}
+
+.menu-container {
+    margin-top: 10px;
+    width: 98%;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #161719;
+    opacity: 90%;
+    border-radius: 25px;
+}
+
+#barra-menu {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul#barra-menu li{
+    display: inline;
+}
+
+#zenithlogo {
+    margin-top: 13px;
+    height:30px;
+    width: 100px;
+    object-fit: cover;
+    margin-left: 20px;
+    float: left;
+}
+
+.search-bar {
+    margin-top: 13px;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.466);
+    border-radius: 30px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 1px #404853;
+    overflow: hidden;
+}
+.search-bar.active {
+    width: 180px;
+}
+.search-bar .icon {
+    position: relative;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 60px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search-bar .icon::before {
+    position: relative;
+    width: 7.5px;
+    height: 7.5px;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+}
+
+.search-bar .icon::after {
+    position: relative;
+    width: 1.5px;
+    height: 6px;
+    background: #fff;
+}
+
+.search-bar .input {
+    position: relative;
+    top: -30px;
+    height:30px;
+    left: 31px;
+    display: flex;
+    justify-content: center;
+}
+.search-bar {
+    margin-right: 20px;
+}
+
+
+
+.search-bar .input input{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+.bottom-container {
+    overflow-y: scroll;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #161719;
+    opacity: 90%;
+    width: 100%;
+    height: 505px;
+    margin-top: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}

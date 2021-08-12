@@ -67,11 +67,6 @@ ul#barra-menu li{
     display: inline;
 }
 
-ul#barra-menu .divisor-menu {
-    background-color: aqua;
-    width: 10px;
-    height: 10px;
-}
 
 #zenithlogo {
     margin-top: 13px;
