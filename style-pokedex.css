@@ -143,12 +143,12 @@ ul#barra-menu li{
     font-size: 16px;
 }
 .bottom-container {
-    position: relative;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #161719;
+    background-color: #000000;
     opacity: 90%;
     width: 100%;
     height: 505px;
@@ -157,12 +157,7 @@ ul#barra-menu li{
     border-top-right-radius: 50px;
 }
 
-.pokedex-tamanho {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    opacity: 90%;
-    width: 20%;
-    height: 50px;
-    margin-top: 20px;
+.video-pokedex {
+    width:auto;
+    height: 366px;
 }
