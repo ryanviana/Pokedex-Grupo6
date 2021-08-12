@@ -60,7 +60,7 @@ function buildCard(pokemon, i) {
         `);
     for(let j = 0; j < pokemon[i].type.length; j++) {
         pokemonHTMLCardRaw.push(`
-            <div class="${pokemon[i].type[j]}">${pokemon[i].type[j]} </div>
+            <div class="poketype ${pokemon[i].type[j]}">${pokemon[i].type[j]} </div>
         `);
     }
     pokemonHTMLCardRaw.push(`
