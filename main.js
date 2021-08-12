@@ -23,6 +23,7 @@ const fetchPoke = async () => {
 
         let desiredPokemons = pokeNames
         pokeCard(pokemon, desiredPokemons);
+        return desiredPokemons;
     });
 }
 
