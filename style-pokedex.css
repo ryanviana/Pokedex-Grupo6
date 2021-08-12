@@ -166,3 +166,31 @@ ul#barra-menu li{
     width:auto;
     height: 366px;
 }
+
+.bt-direita {
+    cursor: pointer;
+    position: absolute;
+    opacity: 90%;
+    vertical-align: middle;
+    right: 0;
+    left: 895px;
+    width: 0px;
+    height: 0px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 9px solid #3c3f41;
+}
+
+.bt-esquerda {
+    cursor: pointer;
+    position: absolute;
+    vertical-align: middle;
+    opacity: 90%;
+    width: 0;
+    height: 0;
+    left: 436px;
+    right: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 9px solid #3c3f41;
+}
