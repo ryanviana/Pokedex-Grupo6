@@ -180,10 +180,23 @@ ul#barra-menu .divisor-menu {
     justify-items: center;
 }
 
-.poketype {
-    display:inline;
+.normal {
+    display:inline-block;
     color: #524e4e;
+    border-radius: 20px;
     background-color: #C4C4C4;
+    height: 20px;
+    width: 85px;
+    margin-top: 15px;
+    margin-right: 10px;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 10px;
+}
+
+.grass {
+    display:inline-block;
+    background-color: #3cf703;
     border-radius: 20px;
     height: 20px;
     width: 85px;
@@ -194,8 +207,18 @@ ul#barra-menu .divisor-menu {
     margin-bottom: 10px;
 }
 
-.poketype .grass {
-    background-color: #3cf703;
+.poison {
+    display:inline-block;
+    color: #ffffff;
+    background-color: #033cf7;
+    border-radius: 20px;
+    height: 20px;
+    width: 85px;
+    margin-top: 15px;
+    margin-right: 10px;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 10px;
 }
 
 .pokeinfo {

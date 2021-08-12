@@ -20,10 +20,8 @@ const fetchPoke = async () => {
             pokeNames.push(pokemon[i].name);
         }
         console.log(pokeNames);
-
-        let desiredPokemons = pokeNames
+        let desiredPokemons = pokeNames;
         pokeCard(pokemon, desiredPokemons);
-        return desiredPokemons;
     });
 }
 
@@ -73,17 +71,13 @@ function buildCard(pokemon, i) {
         <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
         <h2 class="pokeinfo">${pokemon[i].name} - ${pokemon[i].id}</h2>
         <br>
-        <div class="poketype">
         `);
     for(let j = 0; j < pokemon[i].type.length; j++) {
         pokemonHTMLCardRaw.push(`
-            <div class="${pokemon[i].type[j]}">
-                <p> ${pokemon[i].type[j]} </p>
-            </div>
+            <div class="${pokemon[i].type[j]}">${pokemon[i].type[j]} </div>
         `);
     }
     pokemonHTMLCardRaw.push(`
-            </div>
             <br>
         </li>
     `)
