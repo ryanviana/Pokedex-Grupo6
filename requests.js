@@ -1,5 +1,5 @@
 const pokeContainer = document.getElementById ('pokeContainer');
-const pokeNumber = 150;
+const pokeNumber = 898;
 
 class PoketMonsterCard {
     constructor(name, image, type, id) {

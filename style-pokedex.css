@@ -143,10 +143,11 @@ ul#barra-menu li{
     font-size: 16px;
 }
 .bottom-container {
-    overflow-y: scroll;
-    flex-direction: column;
+    position: relative;
+    display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     background-color: #161719;
     opacity: 90%;
     width: 100%;
@@ -154,4 +155,14 @@ ul#barra-menu li{
     margin-top: 20px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+}
+
+.pokedex-tamanho {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    opacity: 90%;
+    width: 20%;
+    height: 50px;
+    margin-top: 20px;
 }
