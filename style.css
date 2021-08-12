@@ -21,11 +21,12 @@
     text-align: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    font-family: "DM Sans", sans-serif;
+    font-family: DM-Sans;
     font-size: 26px;
 }
 
 table#barra-titulo {
+    font-family: DM-Sans;
     text-align: center;
     display: inline;
 }
@@ -47,6 +48,11 @@ table#barra-titulo {
 50% { transform: translate(-3px, 0) rotate(-10deg); }
 60% { transform: translate(3px, 0) rotate(10deg); }
 100% { transform: translate(0, 0) rotate(0); }
+}
+
+@font-face {
+    font-family: DM-Sans;
+    src: url('./fonts/DM_Sans/DMSans-Regular.ttf');
 }
 
 .menu-container {
@@ -107,6 +113,7 @@ ul#barra-menu li{
     align-items: center;
     z-index: 1000;
     cursor: pointer;
+    font-family: DM-Sans;
 }
 
 .search-bar .icon::before {
@@ -146,6 +153,7 @@ ul#barra-menu li{
     border: none;
     outline: none;
     font-size: 16px;
+    font-family: DM-Sans;
 }
 .bottom-container {
     overflow-y: scroll;
@@ -177,6 +185,7 @@ ul#barra-menu li{
     padding-left: 15px;
 	text-align: center;
     justify-items: center;
+    font-family: DM-Sans;
 }
 
 .normal {
@@ -437,14 +446,14 @@ ul#barra-menu li{
     text-align: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    font-family: "DM Sans", sans-serif;
+    font-family: DM-Sans;
     font-size: 20px;
 }
 
 .pokeinfo {
     color: #2d2b2b;
     font-size: 1em;
-    font-family: "DM Sans", sans-serif;
+    font-family: DM-Sans;
 }
 
 .pokeimg {
