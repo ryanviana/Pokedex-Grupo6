@@ -23,12 +23,12 @@
     text-align: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    font-family: DM-Sans;
+    font-family: "DM-Sans", sans-serif;
     font-size: 26px;
 }
 
 table#barra-titulo {
-    font-family: DM-Sans;
+    font-family: "DM-Sans", sans-serif;
     text-align: center;
     display: inline;
 }

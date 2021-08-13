@@ -6,12 +6,13 @@
 
 .bg {
     width: 100%;
-    height: 700px;
+    height: 100%;
     background-image: url('./Fotos_gifs/bgpokemon.gif');
     background-attachment: fixed;
     background-repeat: repeat-x;
     background-position: center;
-
+    margin:0px;
+    padding:0px;
 }
 
 .title-container {
@@ -22,11 +23,12 @@
     text-align: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    font-family: "DM Sans", sans-serif;
+    font-family: "DM-Sans", sans-serif;
     font-size: 26px;
 }
 
 table#barra-titulo {
+    font-family: "DM-Sans", sans-serif;
     text-align: center;
     display: inline;
 }
