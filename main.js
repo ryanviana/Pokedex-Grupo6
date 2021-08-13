@@ -48,7 +48,7 @@ function openPokedex(i) {
             ability: result.abilities.map((ability) => ability.ability.name)
         }));
     });
-    window.open("pokede-info.html");
+    window.open(`pokede-info.html?id=${id}`);
 
 }
 
