@@ -1,46 +1,41 @@
-/**<div class="bt-direita" type="button"></div>
-        <div class="bt-esquerda" type="button"></div>**/
-
-const button1 = document.querySelector('.button1');
-const  button2  = document.querySelector('.button2');
-const button3 = document.querySelector('.button3');
-const button4 = document.querySelector('.button4');
-
-button1.onclick = function(){
-    pokedexPage1(thePokemon);
-}
-
-button2.onclick = function(){
-    pokedexPage2(thePokemon);
-}
-
-button3.onclick = function(){
-    pokedexPage3(thePokemon);
-}
-
-button4.onclick = function(){
-    pokedexPage2(thePokemon);
-}
-
 function pokedexPage1(pokemon) {
+    if(thePokemon[0].name == undefined) {
+        thePokemon = pokemon;
+    }
     const pokedexPage1HTML = [];
     const button2HTML = [];
     pokedexPage1HTML.push(`
-    
+        <img src="${thePokemon[0].image3d}" alt="this ${thePokemon[0].name} moves"/>
     `);
-    displayRight.innerHTML;
+    button2HTML.push(`
+        <li onclick="pokedexPage2()">
+            <div class="button2" type="button"></div>
+        </li>
+    `);
+    displayRight.innerHTML = button2HTML;
+    displayLeft.innerHTML = '';
     ecra.innerHTML = pokedexPage1HTML;
 }
 
-function pokedexPage2(pokemon) {
+function pokedexPage2() {
     const pokedexPage2HTML = [];
     const button1HTML = [];
     const button3HTML = [];
     pokedexPage2HTML.push(`
-    
+    <div class="titlebar"> PAGE 2</div>
     `);
-    displayLeft.innerHTML;
-    displayRight.innerHTML;
+    button1HTML.push(`
+        <li onclick="pokedexPage1()">
+            <div class="button1" type="button"></div>
+        </li>
+    `);
+    button3HTML.push(`
+        <li onclick="pokedexPage3()">
+            <div class="button3" type="button"></div>
+        </li>
+    `);
+    displayLeft.innerHTML = button1HTML;
+    displayRight.innerHTML = button3HTML;
     ecra.innerHTML = pokedexPage2HTML;
 }
 
@@ -48,8 +43,14 @@ function pokedexPage3(pokemon) {
     const pokedexPage3HTML = [];
     const button4HTML = [];
     pokedexPage3HTML.push(`
-    
+    <div class="titlebar"> PAGE 3</div>
     `);
-    displayLeft.innerHTML;
+    button4HTML.push(`
+        <li onclick="pokedexPage2()">
+            <div class="button4" type="button"></div>
+        </li>
+    `);
+    displayLeft.innerHTML = button4HTML;
+    displayRight.innerHTML = '';
     ecra.innerHTML = pokedexPage3HTML;
 }

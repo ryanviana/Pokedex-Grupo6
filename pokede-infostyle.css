@@ -198,6 +198,92 @@ ul#barra-menu li{
     animation-fill-mode: forwards;
 }
 
+.errormessage {
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    font-family: DM-Sans;
+    font-size: 20px;
+}
+
+.button1 {
+    cursor: pointer;
+    position: absolute;
+    vertical-align: middle;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    top: 80px;
+    right: 0;
+    left: 20px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 9px solid #3c3f41;
+    animation-name: fade-in-bt;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.button2 {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    vertical-align: middle;
+    top: 80px;
+    right: 0;
+    left: 150px;
+    width: 0px;
+    height: 0px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 9px solid #3c3f41;
+    animation-name: fade-in-bt;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.button3 {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    vertical-align: middle;
+    top: 80px;
+    right: 0;
+    left: 150px;
+    width: 0px;
+    height: 0px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 9px solid #3c3f41;
+    animation-name: fade-in-bt;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.button4 {
+    cursor: pointer;
+    position: absolute;
+    vertical-align: middle;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    top: 80px;
+    right: 0;
+    left: 20px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 9px solid #3c3f41;
+    animation-name: fade-in-bt;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
 @keyframes fade-in-bt {
     0% {
         opacity: 0;

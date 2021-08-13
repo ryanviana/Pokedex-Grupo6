@@ -34,8 +34,8 @@ const fetchOnePoke = async () => {
             const pimage = result.sprites['front_default'];
             const ptype = result.types.map((type) => type.type.name);
             const pid = result.id;
-            const pimage3d = `projectpokemon.org/images/normal-sprite/${pname}.gif`;
-            thePokemon.push(new PoketMonsterCard(pname, pimage, ptype, pid, pimage3d));
+            const pimage3d = `https://projectpokemon.org/images/normal-sprite/${pname}.gif`;
+            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d));
             console.log("Mochi mochi");
             });
             pokedexPage1(thePokemon);
@@ -44,7 +44,13 @@ const fetchOnePoke = async () => {
 
 idFound = catchIdFromUrl();
 console.log(idFound);
-/**fetchOnePoke();**/
+if(idFound > 0 && idFound < 899) {
+    fetchOnePoke();
+}
+else {
+    ecra.innerHTML = `<div class="errormessage"> UNKNOWED POKEMON </div>`;
+}
+fetchOnePoke();
 
 function catchIdFromUrl() {
     const rawUrl = window.location.href.split('?');
