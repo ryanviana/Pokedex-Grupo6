@@ -198,3 +198,56 @@ darkRetangle::after {
     background-color: #151414;
     position: absolute;
 }
+
+.nameNote {
+    margin-right: 5px;
+    margin-top: 5px;
+    text-align: right;
+    opacity: 0.5;
+}
+.statusTable {
+    text-align: center;
+    left: 5px;
+    margin-left: 27px;
+    bottom: 0px;
+    margin-bottom: 0px;
+    top: 27px;
+    width: 245px;
+    height: 280px;
+    position: absolute;
+    background-color: #8C8C8C;
+    color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.typesNdWeaknesses {
+    text-align: center;
+    left: 300px;
+    top: 5px;
+    width: 230px;
+    height: 130px;
+    position: relative;
+    background-color: #8C8C8C;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.damageWhenAttacked {
+    text-align: center;
+    left: 300px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 230px;
+    height: 140px;
+    position: relative;
+    background-color: #8C8C8C;
+    color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
