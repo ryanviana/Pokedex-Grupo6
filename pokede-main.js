@@ -5,6 +5,11 @@ const capitalize = str => {
 	return str.charAt(0).toUpperCase() + str.substr(1);
 }
 
+// função ani() -> realiza a animação do icone da pokebola
+function ani() {
+    document.getElementById('img-pkb').className = 'pokebola';
+}
+
 function numberFormater(number) {
     let outputNumber;
     if(number > 99) {

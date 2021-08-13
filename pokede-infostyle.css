@@ -1,7 +1,7 @@
 .opacityBlack {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    height: 700px;
+    height: 621px;
 }
 
 .bg {
@@ -13,6 +13,7 @@
     background-position: center;
     margin:0px;
     padding:0px;
+
 }
 
 .title-container {
@@ -23,16 +24,19 @@
     text-align: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    font-family: "DM-Sans", sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 26px;
 }
 
 table#barra-titulo {
-    font-family: "DM-Sans", sans-serif;
     text-align: center;
     display: inline;
 }
 
+@font-face {
+    font-family: DM-Sans;
+    src: url('./fonts/DM_Sans/DMSans-Regular.ttf');
+}
 
 .pokebola {
     margin-top: 27px ;
@@ -86,7 +90,7 @@ ul#barra-menu li{
 
 .divisor-menu-2 {
     position: absolute;
-    left: 1110px;
+    left: 1130px;
     top: 135px;
     height: 40px;
     width: 1px;
@@ -104,7 +108,6 @@ ul#barra-menu li{
 }
 
 .search-bar {
-    right: 18px;
     position: relative;
     margin-bottom: 100px;
     padding-bottom: 0;
@@ -178,8 +181,8 @@ ul#barra-menu li{
     overflow: hidden;
     background-color: #000000;
     opacity: 90%;
-    width: 98.85%;
-    height: 505px;
+    width: 100%;
+    height: 68.719%;
     margin-top: 20px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
