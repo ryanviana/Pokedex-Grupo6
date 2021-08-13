@@ -115,13 +115,14 @@ body {
 
 .rec-left {
     position: absolute;
-    margin: auto;
+    top: 0px;
+    left: 260px;
     width: 250px;
     height:480px;
     clip: rect(0px, 120px, 430px, 0px);
-    animation-name: open-rec-e;
+    /*animation-name: open-rec-e;
     animation-duration: 3s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;*/
 }
 
 @keyframes open-rec-e {
@@ -135,6 +136,8 @@ body {
 
 .rec-mid {
     position: absolute;
+    top: 0;
+    left: 260px;
     width: 400px;
     height: 480px;
     clip: rect(0px, 674px, 440px, 120px);
@@ -142,6 +145,8 @@ body {
 
 .rec-right {
     position: absolute;
+    top:0;
+    left: 260px;
     width: 400px;
     height: 480px;
     clip: rect(0px, 870px, 440px, 674px);
