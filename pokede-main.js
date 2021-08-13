@@ -78,7 +78,11 @@ function pokedexPage3(pokemon) {
     const button4HTML = [];
     pokedexPage3HTML.push(`
     <div class="evolutionPanel"></div>
-    <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
+    <div class="titleBar">
+        <h3 class="display-pokename">
+            ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}
+        </h3>
+    </div>
 
     `);
     button4HTML.push(`

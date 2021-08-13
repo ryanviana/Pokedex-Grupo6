@@ -113,3 +113,22 @@ body {
     height: 320px;
 }
 
+.titleBar {
+    font-family:DM-Sans ;
+    position: relative;
+    display: flex;
+    margin-top: 5px;
+    color: white;
+    vertical-align: middle;
+    justify-content: center;
+    text-align: center;
+    line-height: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 306px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #161719;
+}
+
+

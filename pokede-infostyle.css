@@ -257,11 +257,7 @@ ul#barra-menu li{
     }
 }
 
-.titleBar {
-    width: 300px;
-    height: 60px;
-    background-color: #801300;
-}
+
 
 .fadein-pok-fixo {
     opacity: 0;
