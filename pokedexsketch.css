@@ -113,17 +113,16 @@ body {
     height: 320px;
 }
 
-.rec-esq {
+.rec {
+    position: absolute;
     width: 250px;
     height:480px;
-    position: absolute;
-    top: 20px;
-    bottom:0px;
     clip: rect(0px, 120px, 430px, 0px);
     animation-name: open-rect-e;
     animation-duration: 3s;
     animation-fill-mode: forwards;
 }
+
 @keyframes open-rect-e {
     0% {
         transform: translateX(0px);
@@ -132,3 +131,5 @@ body {
         transform: translateX(-200px);
     }
 }
+
+

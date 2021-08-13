@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="include-html-script.js"></script>
 
     <title>Pokédex 😎</title>
     <link rel = "icon" href =
@@ -54,34 +55,20 @@
     </div>
 
     <div class="bottom-container">
-        <div class="rec-esq">
-            <div class="pokedex">
-                <div class="bigCircle">
-                    <div class="mediumCircle">
-                        <div class="smallCircle"></div>
-                    </div>
-                </div>
-                <div class="bigCircleright">
-                    <div class="mediumCircleright">
-                        <div class="smallCircleright"></div>
-                    </div>
-                </div>
-                <div class="led"></div>
-                <div class="led right"></div>
-                <div class="displayBlack"></div>
-                <div class="display" id="pokeEcra">
-                </div>
-            </div>
-        </div>
+
+        <div w3-include-html="vetor-pokedex.html"></div>
+
         <div class="bt-direita" type="button"></div>
         <div class="bt-esquerda" type="button"></div>
     </div>
 </div>
 </div>
+
+<script>
+    includeHTML();
+</script>
+
 </body>
 
 </html>
 
-
-</body>
-</html>
