@@ -121,9 +121,10 @@ body {
     height:480px;
     clip: rect(0px, 120px, 430px, 0px);
     animation-name: open-rec-l;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-direction: reverse;
+    animation-timing-function: ease-in;
 }
 
 @keyframes open-rec-l {
@@ -143,10 +144,13 @@ body {
     height: 480px;
     clip: rect(0px, 870px, 440px, 674px);
     animation-name: open-rec-r;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-direction: reverse;
+    animation-timing-function: ease-in;
+
 }
+
 @keyframes open-rec-r {
     0% {
         transform: translateX(0px);
@@ -164,9 +168,10 @@ body {
     height: 480px;
     clip: rect(0px, 674px, 440px, 120px);
     animation-name: open-rec-m;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-direction: reverse;
+    animation-timing-function: ease-in;
 }
 
 @keyframes open-rec-m {
@@ -175,7 +180,7 @@ body {
     }
 
     100% {
-        transform: translateX(130px) scaleX(0.4);
+        transform: translateX(130px) scaleX(0.5);
     }
 }
 
