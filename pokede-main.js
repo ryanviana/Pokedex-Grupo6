@@ -34,7 +34,7 @@ function pokedexPage1(pokemon) {
             <img class="image-3DPokemon" src="${thePokemon[0].image3d}" alt="this ${thePokemon[0].name} moves"/>
         </div>
         <div class="pokemonsDescription">
-            <div class="pokeText">Here will be the pokemon's description</div>
+            <p class="pokeText">Here will be the pokemon's description</p>
         </div>
         <div class="darkRetangle">I don't remember what we decided to put here, sorry</div>
     `);

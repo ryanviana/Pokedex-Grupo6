@@ -137,11 +137,22 @@ body {
 }
 
 .image-3DPokemon {
-    height: auto;
-    width: 150px;
+    height: 129px;
+    width: auto;
     size: 100px;
     padding-left: 0px;
     transform: scaleX(-1);
 }
 
+.pokemonsDescription {
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #8C8C8C;
+    width: 230px;
+    height: 141px;
+    justify-content: center;
+    text-align: center;
+}
 
