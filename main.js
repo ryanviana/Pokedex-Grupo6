@@ -20,7 +20,7 @@ function beginWith(string ,query) {
 InputBox.onkeyup = (e)=>{
     let trainerData = e.target.value;
     let desiredPokemons = [];
-    desiredPokemons = pokeNames.filter(poke => beginWith(poke, trainerData));
+    desiredPokemons = pokeNames.filter(poke => beginWith(poke, trainerData.toLowerCase()));
     console.log(desiredPokemons);
     pokeCard(pokemon, desiredPokemons);
 }
