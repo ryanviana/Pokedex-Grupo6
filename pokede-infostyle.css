@@ -24,13 +24,19 @@
     text-align: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    font-family: "DM Sans", sans-serif;
+    font-family: "DM-Sans", sans-serif;
     font-size: 26px;
 }
 
 table#barra-titulo {
+    line-height: 0px;
+    font-family: "DM-Sans", sans-serif;
     text-align: center;
     display: inline;
+}
+
+.title {
+    line-height: 30px;
 }
 
 @font-face {
