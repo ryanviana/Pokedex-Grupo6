@@ -137,6 +137,8 @@ body {
 }
 
 .image-3DPokemon {
+    left: 17px;
+    position: relative;
     height: 129px;
     width: auto;
     size: 100px;
@@ -145,14 +147,54 @@ body {
 }
 
 .pokemonsDescription {
+    position: absolute;
     color: white;
+    margin-left: 290px;
+    top: 65px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: #8C8C8C;
-    width: 230px;
-    height: 141px;
-    justify-content: center;
+    width: 210px;
+    height: 121px;
     text-align: center;
 }
 
+darkRetangle::after {
+    margin-left: 200px;
+    margin-top: 216px;
+    width: 80px;
+    height: 5px;
+    border-radius: 70%;
+    background-color: #151414;
+    position: absolute;
+}
+
+
+.darkRetangle {
+    top: 198px;
+    left: 37px;
+    position: absolute;
+    width: 465px;
+    height: 115px;
+    color: white;
+    position: absolute;
+    background-color: #8C8C8C;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.pok-shadow {
+    opacity: 0.5;
+    margin-left: 200px;
+    margin-top: 216px;
+    top: 0px;
+    width: 80px;
+    height: 5px;
+    border-radius: 70%;
+    background-color: #151414;
+    position: absolute;
+}

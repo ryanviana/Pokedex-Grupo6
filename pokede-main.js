@@ -30,6 +30,7 @@ function pokedexPage1(pokemon) {
     const button2HTML = [];
     pokedexPage1HTML.push(`
         <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
+
         <div class="pokeModel">    
             <img class="image-3DPokemon" src="${thePokemon[0].image3d}" alt="this ${thePokemon[0].name} moves"/>
         </div>
@@ -37,6 +38,7 @@ function pokedexPage1(pokemon) {
             <p class="pokeText">Here will be the pokemon's description</p>
         </div>
         <div class="darkRetangle">I don't remember what we decided to put here, sorry</div>
+
     `);
     button2HTML.push(`
         <li onclick="pokedexPage2()">
