@@ -172,8 +172,8 @@ ul#barra-menu li{
     left: 935px;
     width: 0px;
     height: 0px;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
     border-left: 22px solid #3c3f41;
     animation-name: fade-in-bt;
     animation-duration: 3s;
@@ -189,10 +189,10 @@ ul#barra-menu li{
     width: 0;
     height: 0;
     margin-bottom: 20px;
-    left: 350px;
+    left: 358px;
     right: 0;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
     border-right: 22px solid #3c3f41;
     animation-name: fade-in-bt;
     animation-duration: 3s;
