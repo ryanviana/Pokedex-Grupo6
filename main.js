@@ -48,6 +48,8 @@ function openPokedex(i) {
             ability: result.abilities.map((ability) => ability.ability.name)
         }));
     });
+    window.open("pokede-info.html");
+
 }
 
 function buildCard(pokemon, i) {
