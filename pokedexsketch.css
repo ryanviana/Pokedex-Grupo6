@@ -120,17 +120,39 @@ body {
     width: 250px;
     height:480px;
     clip: rect(0px, 120px, 430px, 0px);
-    /*animation-name: open-rec-e;
+    animation-name: open-rec-l;
     animation-duration: 3s;
-    animation-fill-mode: forwards;*/
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
 }
 
-@keyframes open-rec-e {
+@keyframes open-rec-l {
     0% {
         transform: translateX(0px);
     }
     100% {
-        transform: translateX(-200px);
+        transform: translateX(225px);
+    }
+}
+
+.rec-right {
+    position: absolute;
+    top:0;
+    left: 260px;
+    width: 400px;
+    height: 480px;
+    clip: rect(0px, 870px, 440px, 674px);
+    animation-name: open-rec-r;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+@keyframes open-rec-r {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-225px);
     }
 }
 
@@ -141,14 +163,20 @@ body {
     width: 400px;
     height: 480px;
     clip: rect(0px, 674px, 440px, 120px);
+    animation-name: open-rec-m;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
 }
 
-.rec-right {
-    position: absolute;
-    top:0;
-    left: 260px;
-    width: 400px;
-    height: 480px;
-    clip: rect(0px, 870px, 440px, 674px);
+@keyframes open-rec-m {
+    0% {
+        transform: scaleX(1) translateX(0px);
+    }
+
+    100% {
+        transform: translateX(130px) scaleX(0.4);
+    }
 }
+
 
