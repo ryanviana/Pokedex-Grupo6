@@ -162,11 +162,6 @@ ul#barra-menu li{
     border-top-right-radius: 50px;
 }
 
-.video-pokedex {
-    width:auto;
-    height: 366px;
-}
-
 .bt-direita {
     cursor: pointer;
     position: absolute;
