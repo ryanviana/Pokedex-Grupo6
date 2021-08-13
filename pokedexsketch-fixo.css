@@ -114,7 +114,7 @@ body {
 }
 
 .titleBar {
-    font-family:DM-Sans ;
+    font-family: "DM Sans", sans-serif;
     position: relative;
     display: flex;
     margin-top: 5px;
@@ -147,6 +147,7 @@ body {
 }
 
 .pokemonsDescription {
+    font-family: "DM Sans", sans-serif;
     position: absolute;
     color: white;
     margin-left: 290px;
@@ -172,6 +173,7 @@ darkRetangle::after {
 
 
 .darkRetangle {
+    font-family: "DM Sans", sans-serif;
     top: 198px;
     left: 37px;
     position: absolute;
@@ -200,12 +202,14 @@ darkRetangle::after {
 }
 
 .nameNote {
+    font-family: "DM Sans", sans-serif;
     margin-right: 5px;
     margin-top: 5px;
     text-align: right;
     opacity: 0.5;
 }
 .statusTable {
+    font-family: "DM Sans", sans-serif;
     text-align: center;
     left: 5px;
     margin-left: 27px;
@@ -216,13 +220,14 @@ darkRetangle::after {
     height: 280px;
     position: absolute;
     background-color: #8C8C8C;
-    color: white;
+    color: black;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
 .typesNdWeaknesses {
+    font-family: "DM Sans", sans-serif;
     text-align: center;
     left: 300px;
     top: 5px;
@@ -230,12 +235,13 @@ darkRetangle::after {
     height: 130px;
     position: relative;
     background-color: #8C8C8C;
-    color: white;
+    color: black;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 .damageWhenAttacked {
+    font-family: "DM Sans", sans-serif;
     text-align: center;
     left: 300px;
     margin-top: 15px;
@@ -244,7 +250,7 @@ darkRetangle::after {
     height: 140px;
     position: relative;
     background-color: #8C8C8C;
-    color: white;
+    color: black;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;

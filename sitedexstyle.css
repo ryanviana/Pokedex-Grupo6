@@ -89,8 +89,33 @@ ul#barra-menu li{
     float: left;
 }
 
+.divisor-menu-1 {
+    position: absolute;
+    left: 164px;
+    top: 127px;
+    height: 40px;
+    width: 1px;
+    border-radius: 22%;
+    background-color: #8C8C8C;
+}
+
+.divisor-menu-2 {
+    position: absolute;
+    left: 1130px;
+    top: 127px;
+    height: 40px;
+    width: 1px;
+    border-radius: 22%;
+    background-color: #8C8C8C;
+}
+
 .search-bar {
-    margin-top: 13px;
+    position: relative;
+    margin-bottom: 100px;
+    padding-bottom: 0;
+    bottom: 2500px;
+    top: -20px;
+    margin-top: 0px;
     float: right;
     width: 30px;
     height: 30px;
