@@ -1,3 +1,27 @@
+const capitalize = str => {
+	if (typeof str !== 'string') {
+		return '';
+	}
+	return str.charAt(0).toUpperCase() + str.substr(1);
+}
+
+function numberFormater(number) {
+    let outputNumber;
+    if(number > 99) {
+        return `${number}`;
+    }
+    else {
+        if(number > 9){
+            outputNumber = `0` + `${number}`;
+            return outputNumber;
+        }
+        else {
+            outputNumber = `00` + `${number}`;
+            return outputNumber;
+        }
+    }
+}
+
 function pokedexPage1(pokemon) {
     if(thePokemon[0].name == undefined) {
         thePokemon = pokemon;
@@ -5,7 +29,14 @@ function pokedexPage1(pokemon) {
     const pokedexPage1HTML = [];
     const button2HTML = [];
     pokedexPage1HTML.push(`
-        <img src="${thePokemon[0].image3d}" alt="this ${thePokemon[0].name} moves"/>
+        <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
+        <div class="pokeModel">    
+            <img src="${thePokemon[0].image3d}" alt="this ${thePokemon[0].name} moves"/>
+        </div>
+        <div class="pokemonsDescription">
+            <div class="pokeText">Here will be the pokemon's description</div>
+        </div>
+        <div class="darkRetangle">I don't remember what we decided to put here, sorry</div>
     `);
     button2HTML.push(`
         <li onclick="pokedexPage2()">
@@ -22,7 +53,10 @@ function pokedexPage2() {
     const button1HTML = [];
     const button3HTML = [];
     pokedexPage2HTML.push(`
-    <div class="titlebar"> PAGE 2</div>
+    <div class="nameNote">${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
+    <div class="statusTable">Statuses</div>
+    <div class="typesNdWeaknesses">Types and Weaknesses</div>
+    <div class="damageWhenAttacked">Dammage when Attacked</div>
     `);
     button1HTML.push(`
         <li onclick="pokedexPage1()">
@@ -43,7 +77,9 @@ function pokedexPage3(pokemon) {
     const pokedexPage3HTML = [];
     const button4HTML = [];
     pokedexPage3HTML.push(`
-    <div class="titlebar"> PAGE 3</div>
+    <div class="evolutionPanel"></div>
+    <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
+
     `);
     button4HTML.push(`
         <li onclick="pokedexPage2()">
