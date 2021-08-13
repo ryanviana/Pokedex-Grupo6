@@ -31,7 +31,7 @@ function pokedexPage1(pokemon) {
     pokedexPage1HTML.push(`
         <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
         <div class="pokeModel">    
-            <img src="${thePokemon[0].image3d}" alt="this ${thePokemon[0].name} moves"/>
+            <img class="image-3DPokemon" src="${thePokemon[0].image3d}" alt="this ${thePokemon[0].name} moves"/>
         </div>
         <div class="pokemonsDescription">
             <div class="pokeText">Here will be the pokemon's description</div>
@@ -79,9 +79,7 @@ function pokedexPage3(pokemon) {
     pokedexPage3HTML.push(`
     <div class="evolutionPanel"></div>
     <div class="titleBar">
-        <h3 class="display-pokename">
-            ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}
-        </h3>
+        ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}
     </div>
 
     `);
