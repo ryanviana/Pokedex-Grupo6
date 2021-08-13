@@ -168,15 +168,16 @@ ul#barra-menu li{
     opacity: 0;
     vertical-align: middle;
     right: 0;
-    left: 895px;
+    margin-bottom: 20px;
+    left: 935px;
     width: 0px;
     height: 0px;
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-left: 9px solid #3c3f41;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 22px solid #3c3f41;
     animation-name: fade-in-bt;
     animation-duration: 3s;
-    animation-delay: 2s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -187,14 +188,15 @@ ul#barra-menu li{
     opacity: 0;
     width: 0;
     height: 0;
-    left: 436px;
+    margin-bottom: 20px;
+    left: 350px;
     right: 0;
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-right: 9px solid #3c3f41;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 22px solid #3c3f41;
     animation-name: fade-in-bt;
     animation-duration: 3s;
-    animation-delay: 2s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -202,7 +204,6 @@ ul#barra-menu li{
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }

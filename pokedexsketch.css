@@ -176,11 +176,11 @@ body {
 
 @keyframes open-rec-m {
     0% {
-        transform: scaleX(1) translateX(0px);
+        transform: scaleX(1.2) translateX(0px);
     }
 
     100% {
-        transform: translateX(130px) scaleX(0.5);
+        transform: translateX(120px) scaleX(0.5);
     }
 }
 
