@@ -72,6 +72,26 @@ ul#barra-menu li{
     display: inline;
 }
 
+.divisor-menu-1 {
+    position: absolute;
+    left: 164px;
+    top: 135px;
+    height: 40px;
+    width: 1px;
+    border-radius: 22%;
+    background-color: #8C8C8C;
+}
+
+.divisor-menu-2 {
+    position: absolute;
+    left: 1110px;
+    top: 135px;
+    height: 40px;
+    width: 1px;
+    border-radius: 22%;
+    background-color: #8C8C8C;
+}
+
 #zenithlogo {
     margin-top: 13px;
     height:30px;
@@ -82,7 +102,13 @@ ul#barra-menu li{
 }
 
 .search-bar {
-    margin-top: 13px;
+    right: 18px;
+    position: relative;
+    margin-bottom: 100px;
+    padding-bottom: 0;
+    bottom: 2500px;
+    top: -20px;
+    margin-top: 0px;
     float: right;
     width: 30px;
     height: 30px;
@@ -131,9 +157,6 @@ ul#barra-menu li{
     left: 31px;
     display: flex;
     justify-content: center;
-}
-.search-bar {
-    margin-right: 20px;
 }
 
 .search-bar .input input{
