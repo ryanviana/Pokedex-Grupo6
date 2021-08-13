@@ -21,16 +21,16 @@ class block {
 }
 
 class PoketMonsterInfo {
-    constructor(name, image, type, id, image3d, abilities, weakness, stats, description) {
+    constructor(name, image, type, id, image3d, abilities/*, weakness, stats, description*/) {
         this.name = name;
         this.image = image;
         this.image3d = image3d;
         this.type = type;
         this.id = id;
         this.abilities = abilities;
-        this.weakness = weakness;
+        /*this.weakness = weakness;
         this.stats = stats;
-        this.description = description;
+        this.description = description;*/
     }
 }
 // Global VAR
@@ -51,10 +51,10 @@ const fetchOnePoke = async () => {
             const pid = result.id;
             const pimage3d = `https://projectpokemon.org/images/normal-sprite/${pname}.gif`;
             const pabilities = result.abilities.map((ability) => ability.ability.name);
-            const pweakness = result.types.damage_relations.map((double_damage_from) => double_damage_from);
+            /*const pweakness = result.types.damage_relations.map((double_damage_from) => double_damage_from);
             const pstats = result.stats.map((base_stat) => base_stat);
-            const pdescription = result.descriptions.map((description) => description);
-            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pweakness, pstats, pdescription));
+            const pdescription = result.descriptions.map((description) => description);*/
+            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities/*, pweakness, pstats, pdescription*/));
             console.log("Mochi mochi");
         });
         findEvolutionChain(thePokemon);
