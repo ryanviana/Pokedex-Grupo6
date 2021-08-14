@@ -1,3 +1,12 @@
+const dictTypes = {
+    "normal" : "1", "fighting" : "2", "flying": "3", 
+    "poison" : "4", "ground" : "5", "rock": "6", 
+    "bug" : "7", "ghost" : "8", "steel" : "9",
+    "fire" : "10","water" : "11","grass" : "12",
+    "electric" : "13","psychic" : "14","ice" : "15",
+    "dragon" : "16","dark" : "17", "fairy" : "18"
+}
+
 //Global VAR
 const ecra = document.getElementById('ecra');
 const displayLeft = document.getElementById('displayLeft');
@@ -57,7 +66,14 @@ const fetchOnePoke = async () => {
             const pNameStats = result.stats.map((stat) => stat.stat.name);
             const pweight = result.weight/10;
             const pheight = result.height/10;
-            const url2 = `https://pokeapi.co/api/v2/type/${idFound}`;
+            let pcode = [];
+            pcode.push(dictTypes[`${result.types[0].type.name}`]);
+            const url2 = `https://pokeapi.co/api/v2/type/${pcode[0]}`;
+            let url3;
+            if(result.types[1] != undefined) {
+                pcode.push(dictTypes[`${result.types[1].type.name}`]);
+                url3 = `https://pokeapi.co/api/v2/type/${pcode[1]}`;
+            }
             const promises2 = [];
             promises2.push(fetch(url2).then((res) => res.json()));
             Promise.all(promises2).then((results2) => {
