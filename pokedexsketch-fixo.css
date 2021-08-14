@@ -326,6 +326,12 @@ body {
 
 }
 
+.button1:active, .button2:active, .button3:active, .button4:active {
+    transform: scale(0.8);
+}
+
+
+
 .button3 {
     opacity: 0;
     cursor: pointer;
