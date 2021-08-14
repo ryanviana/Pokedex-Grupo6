@@ -115,8 +115,8 @@ ul#barra-menu li{
 
 .search-bar {
     position: relative;
-    top: -20px;
-    margin-top: 34px;
+    margin-right: 20px;
+    top: -46px;
     float: right;
     width: 30px;
     height: 30px;
@@ -373,4 +373,35 @@ ul#barra-menu li{
     height: auto;
     width: 150px;
 }
+
+.pikachu-container {
+    right: 95px;
+    margin: auto;
+    width: 967px;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gifpikachu {
+    position: relative;
+    animation: loading-run 8s linear infinite;
+    max-width: 600px;
+    max-height: 60px;
+}
+
+@keyframes loading-run {
+
+    0% {
+        transform: translateX(-550px);
+    }
+
+    100% {
+        transform: translateX(550px);
+    }
+
+}
+
 
