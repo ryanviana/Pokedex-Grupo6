@@ -64,7 +64,7 @@ async function buildTazo(pokemon, min_level, some_item) {
         <li class="pokeTazo">
             <img id = "tazo" src="${pokemon.image}" class="tazoImage"/>
             <div class="divisor-tazopokemon"></div>
-            <h2 class="pokeinfo">${capitalize(pokemon.name)} - ${pokemon.id}</h2>
+            <h2 class="pokeinfo">${capitalize(pokemon.name)} - ${numberFormater(pokemon.id)}</h2>
         `);
     for(let i = 0; i < pokemon.type.length; i++) {
         pokemonHTMLTazoRaw.push(`
@@ -197,7 +197,7 @@ function pokedexPage3(pokemon) {
     <div class="evolutionPanel">
         <div class="arrow1" ></div>
         <div class="arrow2"></div>
-        <div class="leftColumn" id="indexPokemon" type="button" onclick="loadEvolutionChain()"></div>
+        <div class="leftColumn" id="indexPokemon"></div>
         <div class="midleColumn" id="firstEvolution"></div>
         <div class="rightColumn" id="secondEvolution"></div>
     </div>
@@ -215,6 +215,7 @@ function pokedexPage3(pokemon) {
     displayLeft.innerHTML = button4HTML;
     displayRight.innerHTML = '';
     ecra.innerHTML = pokedexPage3HTML;
+    loadEvolutionChain();
 }
 
 // audio do botão da pokedex
