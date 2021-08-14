@@ -105,7 +105,7 @@ ul#barra-menu li{
 
 .divisor-menu-2 {
     position: absolute;
-    left: 1130px;
+    left: 1114px;
     top: 127px;
     height: 40px;
     width: 1px;
@@ -375,21 +375,23 @@ ul#barra-menu li{
 }
 
 .pikachu-container {
+    top: 11px;
     right: 95px;
     margin: auto;
-    width: 967px;
+    width: 949px;
     height: 60px;
     text-align: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    left: -103px;
 }
 
 .gifpikachu {
     position: relative;
     animation: loading-run 8s linear infinite;
     max-width: 600px;
-    max-height: 60px;
+    max-height: 40px;
 }
 
 @keyframes loading-run {
