@@ -55,8 +55,8 @@ const fetchOnePoke = async () => {
             const pabilities = result.abilities.map((ability) => ability.ability.name).join(', ');
             const pstats = result.stats.map((base_stat) => base_stat.base_stat);
             const pNameStats = result.stats.map((stat) => stat.stat.name);
-            const pweight = results.weight;
-            const pheight = results.height;
+            const pweight = result.weight/10;
+            const pheight = result.height/10;
             const url2 = `https://pokeapi.co/api/v2/type/${idFound}`;
             const promises2 = [];
             promises2.push(fetch(url2).then((res) => res.json()));

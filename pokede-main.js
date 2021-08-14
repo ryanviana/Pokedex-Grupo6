@@ -43,8 +43,8 @@ function pokedexPage1(pokemon) {
             <p class="pokeText">Here will be the pokemon's description</p>
         </div>
         <div class="darkRetangle">
-            <p>Altura: ${thePokemon[0].height}</p>
-            <p>Peso: ${thePokemon[0].weight}</p>
+            <p>Altura: ${thePokemon[0].height}m</p>
+            <p>Peso: ${thePokemon[0].weight}kg</p>
             <p>Habilidades: ${thePokemon[0].abilities}</p>
         </div>
 
