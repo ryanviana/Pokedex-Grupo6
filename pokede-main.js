@@ -197,7 +197,7 @@ function pokedexPage3(pokemon) {
     <div class="evolutionPanel">
         <div class="arrow1" ></div>
         <div class="arrow2"></div>
-        <div class="leftColumn" id="indexPokemon" type="button" onload="loadEvolutionChain()"></div>
+        <div class="leftColumn" id="indexPokemon" type="button" onclick="loadEvolutionChain()"></div>
         <div class="midleColumn" id="firstEvolution"></div>
         <div class="rightColumn" id="secondEvolution"></div>
     </div>
