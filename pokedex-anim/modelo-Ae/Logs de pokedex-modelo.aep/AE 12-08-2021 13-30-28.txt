@@ -1,8 +1,0 @@
-  12/08/2021 13:30:28: iniciando composição “comp4”.
-
-  Saída para: C:\Users\gusta\Desktop\Projetos\Codano\html\pokedex-anim\Modelo-anim\pok-abrindo-certa.avi    12/08/2021 13:30:30: composição concluída “comp4”.
-
-
-  Tempo total decorrido: 2 segundos
-Log fechado em 12/08/2021 às 13:30:30
-
