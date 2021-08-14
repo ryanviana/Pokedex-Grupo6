@@ -115,11 +115,8 @@ ul#barra-menu li{
 
 .search-bar {
     position: relative;
-    margin-bottom: 100px;
-    padding-bottom: 0;
-    bottom: 2500px;
     top: -20px;
-    margin-top: 0px;
+    margin-top: 34px;
     float: right;
     width: 30px;
     height: 30px;
@@ -219,16 +216,26 @@ ul#barra-menu li{
     justify-items: center;
     font-family: DM-Sans;
 }
+
+.divisor-cardpokemon{
+    position: relative;
+    display: inline-table;
+    opacity: 0.5;
+    width: 195px;
+    height: 2px;
+    border-radius: 20px;
+    background-color: #2d2b2b;
+    bottom: 15px;
+}
+
 .poketype{
+    margin-bottom: 10px;
     display:inline-block;
+    font-size: 15px;
     border-radius: 20px;
     height: 20px;
-    width: 85px;
-    margin-top: 15px;
-    margin-right: 10px;
-    padding-right: 8px;
-    padding-left: 8px;
-    margin-bottom: 10px;
+    width: 80px;
+    margin-right: 15px;
 }
 .normal {
     color: #000000;
@@ -349,9 +356,13 @@ ul#barra-menu li{
 }
 
 .pokeinfo {
+    margin-bottom: 0px;
+    margin-top: 0px;
     color: #2d2b2b;
     font-size: 1em;
     font-family: DM-Sans;
+    position: relative;
+    bottom: 10px;
 }
 
 .pokeimg {

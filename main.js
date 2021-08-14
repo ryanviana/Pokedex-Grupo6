@@ -57,8 +57,8 @@ function buildCard(pokemon, i) {
     pokemonHTMLCardRaw.push(`
         <li onclick="openPokedex(${i})" class="pokemon">
         <img id = "cards" src="${pokemon[i].image}" class="pokeimg"/>
+        <div class="divisor-cardpokemon"></div>
         <h2 class="pokeinfo">${capitalize(pokemon[i].name)} - ${pokemon[i].id}</h2>
-        <br>
         `);
     for(let j = 0; j < pokemon[i].type.length; j++) {
         pokemonHTMLCardRaw.push(`
