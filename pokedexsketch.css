@@ -116,8 +116,8 @@ body {
 .rec-left {
     opacity: 0;
     position: absolute;
-    top: 0px;
-    left: 260px;
+    top: -38px;
+    left: 280px;
     width: 250px;
     height:480px;
     clip: rect(0px, 120px, 430px, 0px);
@@ -145,8 +145,8 @@ body {
 .rec-right {
     opacity: 0;
     position: absolute;
-    top:0;
-    left: 260px;
+    top: -38px;
+    left: 277px;
     width: 400px;
     height: 480px;
     clip: rect(0px, 870px, 440px, 674px);
@@ -175,8 +175,8 @@ body {
 .rec-mid {
     opacity: 0;
     position: absolute;
-    top: 0;
-    left: 260px;
+    top: -38px;
+    left: 265px;
     width: 400px;
     height: 480px;
     clip: rect(0px, 674px, 440px, 120px);
