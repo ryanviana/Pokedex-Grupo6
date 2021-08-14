@@ -35,7 +35,6 @@ function pokedexPage1(pokemon) {
     const button2HTML = [];
     pokedexPage1HTML.push(`
         <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
-
         <div class="pokeModel">    
             <img class="image-3DPokemon" src="${thePokemon[0].image3d}" alt="this ${thePokemon[0].name} moves"/>
         </div>
