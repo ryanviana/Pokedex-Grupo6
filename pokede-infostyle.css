@@ -92,7 +92,7 @@ ul#barra-menu li{
 .divisor-menu-1 {
     position: absolute;
     left: 164px;
-    top: 135px;
+    top: 127px;
     height: 40px;
     width: 1px;
     border-radius: 22%;
@@ -102,7 +102,7 @@ ul#barra-menu li{
 .divisor-menu-2 {
     position: absolute;
     left: 1130px;
-    top: 135px;
+    top: 127px;
     height: 40px;
     width: 1px;
     border-radius: 22%;
@@ -120,11 +120,8 @@ ul#barra-menu li{
 
 .search-bar {
     position: relative;
-    margin-bottom: 100px;
-    padding-bottom: 0;
-    bottom: 2500px;
-    top: -20px;
-    margin-top: 0px;
+    top: 14px;
+    margin-right: 20px;
     float: right;
     width: 30px;
     height: 30px;
