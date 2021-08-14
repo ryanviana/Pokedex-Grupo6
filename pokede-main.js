@@ -84,7 +84,7 @@ function pokedexPage3(pokemon) {
     const pokedexPage3HTML = [];
     const button4HTML = [];
     pokedexPage3HTML.push(`
-    <li onload="loadEvolutionChain()">
+    <li class="evolution-page" onload="loadEvolutionChain()">
     <div class="evolutionPanel">
         <div class="arrow1"></div>
         <div class="arrow2"></div>

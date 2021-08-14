@@ -358,7 +358,9 @@ body {
     border-bottom: 26px solid transparent;
     border-right: 18px solid #3c3f41;
     animation: HUD-fade-in 1.5s linear 1s forwards;
-
 }
 
+.evolution-page {
+    position: fixed;
+}
 
