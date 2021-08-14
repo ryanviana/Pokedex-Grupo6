@@ -21,16 +21,18 @@ class block {
 }
 
 class PoketMonsterInfo {
-    constructor(name, image, type, id, image3d, abilities/*, weakness, stats, description*/) {
+    constructor(name, image, type, id, image3d, abilities, stats, nameStat, weight, height, weakness) {
         this.name = name;
         this.image = image;
         this.image3d = image3d;
         this.type = type;
         this.id = id;
         this.abilities = abilities;
-        /*this.weakness = weakness;
         this.stats = stats;
-        this.description = description;*/
+        this.nameStat = nameStat;
+        this.weight = weight;
+        this.height = height;
+        this.weakness = weakness;
     }
 }
 // Global VAR
@@ -51,15 +53,23 @@ const fetchOnePoke = async () => {
             const pid = result.id;
             const pimage3d = `https://projectpokemon.org/images/normal-sprite/${pname}.gif`;
             const pabilities = result.abilities.map((ability) => ability.ability.name);
-            /*const pweakness = result.types.damage_relations.map((double_damage_from) => double_damage_from);
-            const pstats = result.stats.map((base_stat) => base_stat);
-            const pdescription = result.descriptions.map((description) => description);*/
-            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities/*, pweakness, pstats, pdescription*/));
-            console.log("Mochi mochi");
-        });
-        findEvolutionChain(thePokemon);
-        pokedexPage1(thePokemon);
+            const pstats = result.stats.map((base_stat) => base_stat.base_stat);
+            const pNameStats = result.stats.map((stat) => stat.stat.name);
+            const pweight = results.weight;
+            const pheight = results.height;
+            const url2 = `https://pokeapi.co/api/v2/type/${idFound}`;
+            const promises2 = [];
+            promises2.push(fetch(url2).then((res) => res.json()));
+            Promise.all(promises2).then((results2) => {
+                results2.map((result2) => {
+                    const pWeakness = result2.damage_relations.double_damage_from.map((name) => name.name);
+                    thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness));
+                });
+                findEvolutionChain(thePokemon);
+                pokedexPage1(thePokemon);
+            });
     });
+});
 }
 
 async function findEvolutionChain(pokemon) {
