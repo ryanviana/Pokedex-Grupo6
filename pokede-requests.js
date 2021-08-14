@@ -49,10 +49,10 @@ const fetchOnePoke = async () => {
         results.map((result) => {
             const pname = result.name;
             const pimage = result.sprites['front_default'];
-            const ptype = result.types.map((type) => type.type.name);
+            const ptype = result.types.map((type) => type.type.name).join(', ');
             const pid = result.id;
             const pimage3d = `https://projectpokemon.org/images/normal-sprite/${pname}.gif`;
-            const pabilities = result.abilities.map((ability) => ability.ability.name);
+            const pabilities = result.abilities.map((ability) => ability.ability.name).join(', ');
             const pstats = result.stats.map((base_stat) => base_stat.base_stat);
             const pNameStats = result.stats.map((stat) => stat.stat.name);
             const pweight = results.weight;
@@ -62,7 +62,7 @@ const fetchOnePoke = async () => {
             promises2.push(fetch(url2).then((res) => res.json()));
             Promise.all(promises2).then((results2) => {
                 results2.map((result2) => {
-                    const pWeakness = result2.damage_relations.double_damage_from.map((name) => name.name);
+                    const pWeakness = result2.damage_relations.double_damage_from.map((name) => name.name).join(', ');
                     thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness));
                 });
                 findEvolutionChain(thePokemon);

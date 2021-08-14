@@ -42,7 +42,11 @@ function pokedexPage1(pokemon) {
         <div class="pokemonsDescription">
             <p class="pokeText">Here will be the pokemon's description</p>
         </div>
-        <div class="darkRetangle">I don't remember what we decided to put here, sorry</div>
+        <div class="darkRetangle">
+            <p>Altura: ${thePokemon[0].height}</p>
+            <p>Peso: ${thePokemon[0].weight}</p>
+            <p>Habilidades: ${thePokemon[0].abilities}</p>
+        </div>
 
     `);
     button2HTML.push(`
@@ -61,8 +65,17 @@ function pokedexPage2() {
     const button3HTML = [];
     pokedexPage2HTML.push(`
     <div class="nameNote">${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
-    <div class="statusTable">Statuses</div>
-    <div class="typesNdWeaknesses">Types and Weaknesses</div>
+    <div class="statusTable">Statuses
+        <p>${capitalize(thePokemon[0].nameStat[0])}: ${thePokemon[0].stats[0]}</p>
+        <p>${capitalize(thePokemon[0].nameStat[1])}: ${thePokemon[0].stats[1]}</p>
+        <p>${capitalize(thePokemon[0].nameStat[2])}: ${thePokemon[0].stats[2]}</p>
+        <p>${capitalize(thePokemon[0].nameStat[3])}: ${thePokemon[0].stats[3]}</p>
+        <p>${capitalize(thePokemon[0].nameStat[4])}: ${thePokemon[0].stats[4]}</p>
+    </div>
+    <div class="typesNdWeaknesses">Types and Weaknesses
+        <p>Tipos: ${thePokemon[0].type}</p>
+        <p>Fraquezas: ${thePokemon[0].weakness} </p>
+    </div>
     <div class="damageWhenAttacked">Dammage when Attacked</div>
     `);
     button1HTML.push(`
