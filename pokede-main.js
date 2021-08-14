@@ -26,6 +26,103 @@ function numberFormater(number) {
         }
     }
 }
+//GLOBAL VAR
+
+//
+async function catchItemPhoto(url) {
+    apiData = await fetchData(url);
+    myItem = await apiData.json();
+    return myItem.sprites.front_default;
+}
+
+async function cathcPokeData(rawurl) {
+    let modurl = rawurl.split("/");
+    modurl[5] = "pokemon";
+    const url = modurl.join("/");
+    const apiData = await fetchData(url);
+    const myPokemon = await apiData.json();
+    
+    const psprite =  myPokemon.sprites.front_default;
+    const pname = myPokemon.species.name;
+    const ptypes = []; 
+    for(let i = 0; i < myPokemon.types.length; i++) {
+        ptypes.push(myPokemon.types[i].type.name);
+    }
+    const pid = myPokemon.id;
+    pokeJson = {
+        "name" : pname,
+        "image" : psprite,
+        "type" : ptypes,
+        "id" : pid
+    }; 
+    return pokeJson;
+}
+
+async function buildTazo(pokemon, min_level, some_item) {
+    const pokemonHTMLTazoRaw = [];
+    pokemonHTMLTazoRaw.push(`
+        <li class="pokeTazo">
+            <img id = "tazo" src="${pokemon.image}" class="tazoImage"/>
+            <div class="divisor-tazopokemon"></div>
+            <h2 class="pokeinfo">${capitalize(pokemon.name)} - ${pokemon.id}</h2>
+        `);
+    for(let i = 0; i < pokemon.type.length; i++) {
+        pokemonHTMLTazoRaw.push(`
+            <div class="poketype ${pokemon.type[i]}">${pokemon.type[i]} </div>
+        `);
+    }
+    pokemonHTMLTazoRaw.push(`
+            </div>
+            <div class="divisor-tazopokemon"></div>
+            <div class="evolution-requirements">`);
+    if(min_level != null) {
+        pokemonHTMLTazoRaw.push(`
+        <div class="evolveLevel"> Up to level: ${some_item.nick}</div>
+    `);
+    }
+    else {
+        pokemonHTMLTazoRaw.push(`
+        <div class="evolveLevel"> No minimum level is required</div>
+    `);
+    }
+    if(some_item != null) {
+        const itemSprite = await catchItemPhoto(some_item.url);
+        pokemonHTMLTazoRaw.push(`
+            <div class="evolveItem">
+                <div class="itemName"> Requires: ${some_item.nick}</div>
+                <img id = "itemSprite" src="${itemSprite}" class="itemImage"/>
+            </div>
+        `);
+
+    }
+    pokemonHTMLTazoRaw.push(`
+            </div>
+            <br>
+        </li>
+    `);
+    const pokemonHTMLTazoFinal = pokemonHTMLTazoRaw.join(' ');
+    return pokemonHTMLTazoFinal;
+}
+
+async function loadEvolutionChain() {
+    const firstColumn = document.getElementById('indexPokemon');
+    const secondColumn = document.getElementById('firstEvolution');
+    const thirdColumn = document.getElementById('secondEvolution');
+    let firstEvolutionTazo = [];
+    let secondEvolutionTazo = [];
+    const indexPokemon = await cathcPokeData(theChain.species.url);
+    const indexPokemonTazo =  await buildTazo(indexPokemon, theChain.minimum_level, theChain.item);
+    while(true) {
+        break;
+    }
+    while(true) {
+        break;
+    }
+
+    firstColumn.innerHTML = indexPokemonTazo;
+    secondColumn.innerHTML = firstEvolutionTazo;
+    thirdColumn.innerHTML = secondEvolutionTazo;
+}
 
 function pokedexPage1(pokemon) {
     if(thePokemon[0].name == undefined) {
@@ -78,14 +175,14 @@ function pokedexPage2() {
     <div class="damageWhenAttacked">Dammage when Attacked</div>
     `);
     button1HTML.push(`
-        <li onclick="pokedexPage1()">
+        <div onclick="pokedexPage1()">
             <div class="button1" type="button" onclick="buttonSound.play();"></div>
-        </li>
+        </div>
     `);
     button3HTML.push(`
-        <li onclick="pokedexPage3()">
+        <div onclick="pokedexPage3()">
             <div class="button3" type="button" onclick="buttonSound.play();"></div>
-        </li>
+        </div>
     `);
     displayLeft.innerHTML = button1HTML;
     displayRight.innerHTML = button3HTML;
@@ -96,24 +193,24 @@ function pokedexPage3(pokemon) {
     const pokedexPage3HTML = [];
     const button4HTML = [];
     pokedexPage3HTML.push(`
-    <li class="evolution-page" onload="loadEvolutionChain()">
+    <div class="evolution-page">
     <div class="evolutionPanel">
-        <div class="arrow1"></div>
+        <div class="arrow1" ></div>
         <div class="arrow2"></div>
-        <div class="leftColumn" id="indexPokemon"></div>
+        <div class="leftColumn" id="indexPokemon" type="button" onload="loadEvolutionChain()"></div>
         <div class="midleColumn" id="firstEvolution"></div>
         <div class="rightColumn" id="secondEvolution"></div>
     </div>
-    </li>
+    </div>
     <div class="titleBar">
         ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}
     </div>
 
     `);
     button4HTML.push(`
-        <li onclick="pokedexPage2()">
+        <div onclick="pokedexPage2()">
             <div class="button4" type="button"  onclick="buttonSound.play();"></div>
-        </li>
+        </div>
     `);
     displayLeft.innerHTML = button4HTML;
     displayRight.innerHTML = '';

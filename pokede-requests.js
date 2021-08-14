@@ -49,10 +49,9 @@ let theChain;
 let idFound;
 let thePokemon = [];
 //  END Global VAR
-const fetchOnePoke = async () => {
+const fetchOnePoke = async (url) => {
     const promises = [];
 
-    const url = `https://pokeapi.co/api/v2/pokemon/${idFound}`;
     promises.push(fetch(url).then((res) => res.json()));
     Promise.all(promises).then((results) => {
         results.map((result) => {
@@ -102,49 +101,52 @@ const fetchOnePoke = async () => {
 });
 }
 
-async function findEvolutionChain(pokemon) {
+async function findEvolutionChain() {
     const pokeUrl = `https://pokeapi.co/api/v2/pokemon-species/${idFound}/`;
     const rawDataSpecies = await fetchData(pokeUrl);
     const dataSpecies = await rawDataSpecies.json();
     const rawDataChain = await fetchData(dataSpecies.evolution_chain.url);
     const chain = await rawDataChain.json();
-        let a = [];
-        let b = [];
+        let a;
+        let b;
         let v;
-        let w = [];
-        let x = [];
-        let y = [];
-        let z = [];
-        let finalone;
-        let finaltwo;
+        let w;
+        let x;
+        let y;
+        let z;
+        let finalone = [];
+        let finaltwo = [];
         let final;
             v = new element(chain.chain.species.name, chain.chain.species.url);
     
             if(chain.chain.evolves_to != undefined && chain.chain.evolves_to.length > 0) {
                 for(let j = 0; j < chain.chain.evolves_to.length; j++) {
-                    w.push(new element(chain.chain.evolves_to[j].species.name, chain.chain.evolves_to[j].species.url));
+                    w = new element(chain.chain.evolves_to[j].species.name, chain.chain.evolves_to[j].species.url);
                     if(chain.chain.evolves_to[j].evolution_details.item != undefined) {
-                        x.push(new element(chain.chain.evolves_to[j].evolution_details.item.name, chain.chain.evolves_to[j].evolution_details.item.url));
+                        x = new element(chain.chain.evolves_to[j].evolution_details.item.name, chain.chain.evolves_to[j].evolution_details.item.url);
                     }
                     if(chain.chain.evolves_to[j].evolution_details.min_level != undefined) {
-                        a.push(chain.chain.evolves_to[j].evolution_details.min_level);
+                        a = hain.chain.evolves_to[j].evolution_details.min_level;
                     }
+                    console.log("Daijobu Daijobu...");
                     if(chain.chain.evolves_to[j].evolves_to != undefined && chain.chain.evolves_to[j].evolves_to.length > 0) {
-                        for(let k = 0; k < chain.chain.evolves_to[j].evolves_to[k].length; k++) {
-                            y.push( new element(chain.chain.evolves_to[j].evolves_to[k].species.name, chain.chain.evolves_to[j].evolves_to[k].species.url));
+                        console.log("nasete...");
+                        for(let k = 0; k < chain.chain.evolves_to[j].evolves_to.length; k++) {
+                            console.log("Watashidakita!!");
+                            y = new element(chain.chain.evolves_to[j].evolves_to[k].species.name, chain.chain.evolves_to[j].evolves_to[k].species.url);
                             if(chain.chain.evolves_to[j].evolves_to[k].evolution_details.item != undefined) {
-                                z.push(new element(chain.chain.evolves_to[j].evolves_to[k].evolution_details.item.name, chain.chain.evolves_to[j].evolves_to[k].evolution_details.item.url));
+                                z = new element(chain.chain.evolves_to[j].evolves_to[k].evolution_details.item.name, chain.chain.evolves_to[j].evolves_to[k].evolution_details.item.url);
                             }
                             if(chain.chain.evolves_to[j].evolves_to[k].evolution_details.min_level != undefined) {
-                                b.push(chain.chain.evolves_to[j].evolves_to[k].evolution_details.min_level);
+                                b = chain.chain.evolves_to[j].evolves_to[k].evolution_details.min_level;
                             }
+                            finalone.push(new block(y, null,b, z));
                         }
-                        finalone = new block(y, null,b, z);
-                        finaltwo = new block(w, finalone, a, x);
+                        finaltwo.push(new block(w, finalone, a, x));
                         final = new block(v, finaltwo, null, null);
                     } 
                     else {
-                        finalone = new block(w, null, a, x);
+                        finalone.push(new block(w, null, a, x));
                         final = new block(v, finalone, null, null);
                     }
                 }
@@ -161,7 +163,7 @@ async function findEvolutionChain(pokemon) {
     idFound = catchIdFromUrl();
     console.log(idFound);
     if (idFound > 0 && idFound < 899) {
-        fetchOnePoke();
+        fetchOnePoke(`https://pokeapi.co/api/v2/pokemon/${idFound}`);
     }
     else {
         ecra.innerHTML = `<div class="errormessage"> UNKNOWED POKEMON </div>`;
