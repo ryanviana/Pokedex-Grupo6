@@ -35,6 +35,11 @@ table#barra-titulo {
     display: inline;
 }
 
+.anchor-title {
+    color: inherit;
+    text-decoration: none;
+}
+
 .title {
     line-height: 30px;
 }
