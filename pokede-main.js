@@ -42,9 +42,9 @@ function pokedexPage1(pokemon) {
             <p class="pokeText">Here will be the pokemon's description</p>
         </div>
         <div class="darkRetangle">
-            <p>Altura: ${thePokemon[0].height}m</p>
-            <p>Peso: ${thePokemon[0].weight}kg</p>
-            <p>Habilidades: ${thePokemon[0].abilities}</p>
+            <p>Height: ${thePokemon[0].height}m</p>
+            <p>Weight: ${thePokemon[0].weight}kg</p>
+            <p>Abilities: ${thePokemon[0].abilities}</p>
         </div>
 
     `);
@@ -72,8 +72,8 @@ function pokedexPage2() {
         <p>${capitalize(thePokemon[0].nameStat[4])}: ${thePokemon[0].stats[4]}</p>
     </div>
     <div class="typesNdWeaknesses">Types and Weaknesses
-        <p>Tipos: ${thePokemon[0].type}</p>
-        <p>Fraquezas: ${thePokemon[0].weakness} </p>
+        <p>Types: ${thePokemon[0].type}</p>
+        <p>Weakness: ${thePokemon[0].weakness} </p>
     </div>
     <div class="damageWhenAttacked">Dammage when Attacked</div>
     `);
