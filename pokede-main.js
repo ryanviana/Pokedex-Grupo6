@@ -50,7 +50,7 @@ function pokedexPage1(pokemon) {
     `);
     button2HTML.push(`
         <li onclick="pokedexPage2()">
-            <div class="button2" type="button"></div>
+            <div class="button2" type="button" onclick="buttonSound.play();"></div>
         </li>
     `);
     displayRight.innerHTML = button2HTML;
@@ -79,12 +79,12 @@ function pokedexPage2() {
     `);
     button1HTML.push(`
         <li onclick="pokedexPage1()">
-            <div class="button1" type="button"></div>
+            <div class="button1" type="button" onclick="buttonSound.play();"></div>
         </li>
     `);
     button3HTML.push(`
         <li onclick="pokedexPage3()">
-            <div class="button3" type="button"></div>
+            <div class="button3" type="button" onclick="buttonSound.play();"></div>
         </li>
     `);
     displayLeft.innerHTML = button1HTML;
@@ -112,10 +112,15 @@ function pokedexPage3(pokemon) {
     `);
     button4HTML.push(`
         <li onclick="pokedexPage2()">
-            <div class="button4" type="button"></div>
+            <div class="button4" type="button"  onclick="buttonSound.play();"></div>
         </li>
     `);
     displayLeft.innerHTML = button4HTML;
     displayRight.innerHTML = '';
     ecra.innerHTML = pokedexPage3HTML;
 }
+
+// audio do botão da pokedex
+const buttonSound = new Audio();
+buttonSound.src = "./audios/sound-click.wav";
+buttonSound.volume = 0.28;
