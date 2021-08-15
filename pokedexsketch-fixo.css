@@ -443,21 +443,30 @@ body {
     position: relative;
 }
 
+.left {
+    opacity: 0;
+    animation: HUD-fade-in 0.8s linear 0.8s forwards;
+}
+
 .middle {
-    background-color: aquamarine;
+    opacity: 0;
     display: list-item;
     width: auto;
     overflow: auto;
     max-height: 250px;
+    animation: HUD-fade-in 1.2s linear 1.5s forwards;
 }
 
 .right {
-    background-color: aquamarine;
+    opacity: 0;
     display: list-item;
     width: auto;
     overflow: auto;
     max-height: 250px;
+    animation: HUD-fade-in 1.5s linear 1s forwards;
 }
+
+
 
 .pokeinfo-inner {
 font-family: "DM Sans", sans-serif;
