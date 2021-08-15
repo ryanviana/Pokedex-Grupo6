@@ -35,7 +35,7 @@ async function catchItemPhoto(url) {
     return myItem.sprites.front_default;
 }
 
-async function cathcPokeData(rawurl) {
+async function catchPokeData(rawurl) {
     let modurl = rawurl.split("/");
     modurl[5] = "pokemon";
     const url = modurl.join("/");
@@ -110,13 +110,23 @@ async function loadEvolutionChain() {
     const thirdColumn = document.getElementById('secondEvolution');
     let firstEvolutionTazo = [];
     let secondEvolutionTazo = [];
-    const indexPokemon = await cathcPokeData(theChain.species.url);
+    const indexPokemon = await catchPokeData(theChain.species.url);
     const indexPokemonTazo =  await buildTazo(indexPokemon, theChain.minimum_level, theChain.item);
-    while(true) {
-        break;
-    }
-    while(true) {
-        break;
+    if(theChain.evolves_to != null) {
+        for(let i = 0; i < theChain.evolves_to.length; i++) {
+            const pokeFirstEvolution = theChain.evolves_to[i];
+            const firstEvolution = await catchPokeData(pokeFirstEvolution.species.url);
+            firstEvolutionTazo.push(await buildTazo(firstEvolution, pokeFirstEvolution.minimum_level, pokeFirstEvolution.item));
+            if(pokeFirstEvolution.evolves_to != null) {
+                console.log(pokeFirstEvolution.evolves_to.length);
+                for(let j = 0; j < pokeFirstEvolution.evolves_to.length; j++) {
+                    const pokeSecondEvolution = theChain.evolves_to[i].evolves_to[j];
+                    console.log(pokeSecondEvolution);
+                    const secondEvolution = await catchPokeData(pokeSecondEvolution.species.url);
+                    secondEvolutionTazo.push(await buildTazo(secondEvolution, pokeSecondEvolution.minimum_level, pokeSecondEvolution.item));
+                }
+            }
+        }
     }
 
     firstColumn.innerHTML = indexPokemonTazo;
