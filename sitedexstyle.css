@@ -199,8 +199,8 @@ ul#barra-menu li{
 }
 
 #pokeContainer {
+    padding-left: 62px;
     position: relative;
-    left: 62px;
 }
 
 .pokemon {
