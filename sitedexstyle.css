@@ -222,6 +222,10 @@ ul#barra-menu li{
     font-family: DM-Sans;
 }
 
+.pokemon:active {
+    transform: scale(0.97);
+}
+
 .divisor-cardpokemon{
     position: relative;
     display: inline-table;
