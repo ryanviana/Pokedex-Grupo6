@@ -322,6 +322,7 @@ body {
 
 
 .damageWhenAttacked {
+    overflow-y: scroll;
     opacity: 0;
     font-family: "DM Sans", sans-serif;
     text-align: center;
