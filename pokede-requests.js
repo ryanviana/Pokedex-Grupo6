@@ -33,7 +33,7 @@ class block {
 }
 
 class PoketMonsterInfo {
-    constructor(name, image, type, id, image3d, abilities, stats, nameStat, weight, height, weakness) {
+    constructor(name, image, type, id, image3d, abilities, stats, nameStat, weight, height, weakness, info) {
         this.name = name;
         this.image = image;
         this.image3d = image3d;
@@ -45,6 +45,7 @@ class PoketMonsterInfo {
         this.weight = weight;
         this.height = height;
         this.weakness = weakness;
+        this.info = info;
     }
 }
 // Global VAR
@@ -75,31 +76,39 @@ const fetchOnePoke = async (url) => {
             const promises2 = [];
             const pWeakness = [];
             promises2.push(fetch(url2).then((res) => res.json()));
-            Promise.all(promises2).then((results2) => {
-                results2.map((result2) => {
-                    pWeakness [0] = result2.damage_relations.double_damage_from.map((name) => name.name).join(', ');
-                    thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness[0]));
-                });
-                if(result.types[1] != undefined) {
-                    pcode.push(dictTypes[`${result.types[1].type.name}`]);
-                    url3 = `https://pokeapi.co/api/v2/type/${pcode[1]}`;
-                    const promises3 = [];
-                    promises3.push(fetch(url3).then((res) => res.json()));
-                    Promise.all(promises3).then((results3) => {
-                        results3.map((result3) => {
-                            pWeakness [1] = result3.damage_relations.double_damage_from.map((name) => name.name).join(', ');
-                            pWeakness.join(', ');
-                            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness));
+
+            const promisesInfo = [];
+            promisesInfo.push(fetch(`https://pokeapi.co/api/v2/pokemon-species/${pid}`).then((res) => res.json()));
+            Promise.all(promisesInfo).then((resultsInfo) => {
+                resultsInfo.map((resultInfo) => {
+                    pInfo = resultInfo.flavor_text_entries[0].flavor_text;
+                    Promise.all(promises2).then((results2) => {
+                        results2.map((result2) => {
+                            pWeakness [0] = result2.damage_relations.double_damage_from.map((name) => name.name).join(', ');
+                            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness[0], pInfo));
                         });
-                        findEvolutionChain(thePokemon);
-                        pokedexPage1(thePokemon);  
+                        if(result.types[1] != undefined) {
+                            pcode.push(dictTypes[`${result.types[1].type.name}`]);
+                            url3 = `https://pokeapi.co/api/v2/type/${pcode[1]}`;
+                            const promises3 = [];
+                            promises3.push(fetch(url3).then((res) => res.json()));
+                            Promise.all(promises3).then((results3) => {
+                                results3.map((result3) => {
+                                    pWeakness [1] = result3.damage_relations.double_damage_from.map((name) => name.name).join(', ');
+                                    pWeakness.join(', ');
+                                    thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness, pInfo));
+                                });
+                                findEvolutionChain(thePokemon);
+                                pokedexPage1(thePokemon);  
+                            });
+                        }
+                        else {
+                            findEvolutionChain(thePokemon);
+                            pokedexPage1(thePokemon);
+                        }
                     });
-                }
-                else {
-                    findEvolutionChain(thePokemon);
-                    pokedexPage1(thePokemon);
-                }
             });
+        });
     });
 });
 }

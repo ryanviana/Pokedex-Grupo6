@@ -158,7 +158,7 @@ function pokedexPage1(pokemon, faildOnce) {
             <img class="image-3DPokemon" src="${modelOnDisplay}" alt="this ${thePokemon[0].name} moves" onerror="callMe()"/>
         </div>
         <div class="pokemonsDescription">
-            <p class="pokeText">Here will be the pokemon's description</p>
+            <p class="pokeText">${thePokemon[0].info}</p>
         </div>
         <div class="darkRetangle">
             <p>Height: ${thePokemon[0].height}m</p>
