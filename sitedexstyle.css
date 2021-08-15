@@ -198,7 +198,7 @@ ul#barra-menu li{
     border-top-right-radius: 50px;
 }
 
-.pokeContainer {
+#pokeContainer {
     position: relative;
     left: 62px;
 }

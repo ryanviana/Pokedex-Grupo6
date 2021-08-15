@@ -321,8 +321,6 @@ body {
 }
 
 
-
-
 .damageWhenAttacked {
     opacity: 0;
     font-family: "DM Sans", sans-serif;
@@ -340,7 +338,6 @@ body {
     border-bottom-right-radius: 20px;
     animation: HUD-fade-in 1.5s linear 1.4s forwards;
 }
-
 
 
 .button1 {
