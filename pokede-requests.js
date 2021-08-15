@@ -39,7 +39,7 @@ class block {
 }
 
 class PoketMonsterInfo {
-    constructor(name, image, type, id, image3d, abilities, stats, nameStat, weight, height, weakness, info, halfDamage, noDamage) {
+    constructor(name, image, type, id, image3d, abilities, stats, nameStat, weight, height, weakness, info, halfDamage, noDamage, cry) {
         this.name = name;
         this.image = image;
         this.image3d = image3d;
@@ -54,6 +54,7 @@ class PoketMonsterInfo {
         this.info = info;
         this.halfDamage = halfDamage;
         this.noDamage = noDamage;
+        this.cry = cry;
     }
 }
 // Global VAR
@@ -77,6 +78,7 @@ const fetchOnePoke = async (url) => {
             const pNameStats = result.stats.map((stat) => stat.stat.name);
             const pweight = result.weight/10;
             const pheight = result.height/10;
+            const pcry = `https://play.pokemonshowdown.com/audio/cries/${pname}.mp3`
             let pcode = [];
             pcode.push(dictTypes[`${result.types[0].type.name}`]);
             const url2 = `https://pokeapi.co/api/v2/type/${pcode[0]}`;
@@ -109,14 +111,14 @@ const fetchOnePoke = async (url) => {
                                     pDamageHalf [1] = result3.damage_relations.half_damage_from.map((name) => name.name).join(', ');
                                     pDamageHalf.join(', ');
                                     pNoDamage = result3.damage_relations.no_damage_from.map((name) => name.name).join(', ');
-                                    thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness, pInfo, pDamageHalf, pNoDamage));
+                                    thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness, pInfo, pDamageHalf, pNoDamage, pcry));
                                 });
                                 findEvolutionChain(thePokemon);
                                 pokedexPage1(thePokemon);  
                             });
                         }
                         else {
-                            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness[0], pInfo, pDamageHalf[0], '-'));
+                            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness[0], pInfo, pDamageHalf[0], '-', pcry));
                             findEvolutionChain(thePokemon);
                             pokedexPage1(thePokemon);
                         }

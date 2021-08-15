@@ -123,10 +123,12 @@ async function loadEvolutionChain() {
     else{
         firstEvolutionTazo = `<div class="notEvolve">This Pokémon does not evolve</div>`;
     }
-
-    firstColumn.innerHTML = indexPokemonTazo;
-    secondColumn.innerHTML = firstEvolutionTazo;
-    thirdColumn.innerHTML = secondEvolutionTazo;
+    const indexPokemonTazoFinal = indexPokemonTazo;
+    const firstEvolutionTazoFinal = firstEvolutionTazo.join(' ');
+    const secondEvolutionTazoFinal = secondEvolutionTazo.join(' ');
+    firstColumn.innerHTML = indexPokemonTazoFinal;
+    secondColumn.innerHTML = firstEvolutionTazoFinal;
+    thirdColumn.innerHTML = secondEvolutionTazoFinal;
 }
 
 /*`https://projectpokemon.org/images/normal-sprite/${pname}.gif`*/
