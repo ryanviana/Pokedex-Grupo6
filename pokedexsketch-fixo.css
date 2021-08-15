@@ -345,8 +345,6 @@ body {
     opacity: 0;
     cursor: pointer;
     position: absolute;
-    vertical-align: middle;
-    opacity: 0;
     width: 0;
     height: 0;
     top: 68px;
@@ -363,13 +361,12 @@ body {
     opacity: 0;
     cursor: pointer;
     position: absolute;
-    opacity: 0;
     vertical-align: middle;
     top: 60px;
     right: 0;
     left: 120px;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     border-top: 32px solid transparent;
     border-bottom: 32px solid transparent;
     border-left: 22px solid #3c3f41;
@@ -387,13 +384,12 @@ body {
     opacity: 0;
     cursor: pointer;
     position: absolute;
-    opacity: 0;
     vertical-align: middle;
     top: 60px;
     right: 0;
     left: 120px;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     border-top: 32px solid transparent;
     border-bottom: 32px solid transparent;
     border-left: 22px solid #3c3f41;
@@ -401,7 +397,6 @@ body {
 }
 
 .button4 {
-    opacity: 0;
     cursor: pointer;
     position: absolute;
     vertical-align: middle;
@@ -443,21 +438,30 @@ body {
     position: relative;
 }
 
+.left {
+    opacity: 0;
+    animation: HUD-fade-in 0.8s linear 0.8s forwards;
+}
+
 .middle {
-    background-color: aquamarine;
+    opacity: 0;
     display: list-item;
     width: auto;
     overflow: auto;
     max-height: 250px;
+    animation: HUD-fade-in 1.2s linear 1.5s forwards;
 }
 
 .right {
-    background-color: aquamarine;
+    opacity: 0;
     display: list-item;
     width: auto;
     overflow: auto;
     max-height: 250px;
+    animation: HUD-fade-in 1.5s linear 1s forwards;
 }
+
+
 
 .pokeinfo-inner {
 font-family: "DM Sans", sans-serif;
