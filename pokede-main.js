@@ -149,7 +149,7 @@ function pokedexPage1(pokemon, faildOnce) {
             <img class="image-3DPokemon" src="${modelOnDisplay}" alt="this ${thePokemon[0].name} moves" onerror="callMe()"/>
         </div>
         <div class="pokemonsDescription">
-            <p class="pokeText">Here will be the pokemon's description</p>
+            <p class="pokeText">${thePokemon[0].info}</p>
         </div>
         <div class="darkRetangle">
             <p>Height: ${thePokemon[0].height}m</p>
@@ -202,7 +202,11 @@ function pokedexPage2() {
         <p>Types: ${thePokemon[0].type}</p>
         <p>Weakness: ${thePokemon[0].weakness} </p>
     </div>
-    <div class="damageWhenAttacked">Dammage when Attacked</div>
+    <div class="damageWhenAttacked">Dammage when Attacked
+        <p>Double Damage: ${thePokemon[0].weakness}</p>
+        <p>Half Damage: ${thePokemon[0].halfDamage}</p>
+        <p>No Damage: ${thePokemon[0].noDamage}</p>
+    </div>
     `);
     button1HTML.push(`
         <div onclick="pokedexPage1()">
