@@ -27,12 +27,11 @@ const fetchPoke = async () => {
             const ptype = result.types.map((type) => type.type.name);
             const pid = result.id;
             pokemon.push(new PoketMonsterCard(pname, pimage, ptype, pid));
-            console.log("Mochi mochi");
+            console.log("Catching them all...");
             });
             for(let i = 0; i < pokeNumber; i++) {
                 pokeNames.push(pokemon[i].name);
             }
-            console.log(pokeNames);
             pokeCard(pokemon, pokeNames);
     });
 }

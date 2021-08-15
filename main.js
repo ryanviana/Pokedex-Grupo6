@@ -21,7 +21,6 @@ InputBox.onkeyup = (e)=>{
     let trainerData = e.target.value;
     let desiredPokemons = [];
     desiredPokemons = pokeNames.filter(poke => beginWith(poke, trainerData.toLowerCase()));
-    console.log(desiredPokemons);
     pokeCard(pokemon, desiredPokemons);
 }
 
@@ -31,25 +30,7 @@ function ani() {
 }
 
 function openPokedex(i) {
-    promises=[];
-    id = i+1;
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    promises.push(fetch(url).then((res) => res.json()));
-
-    Promise.all(promises).then((results) => {
-        const pokemon = results.map((result) => ({
-            name: result.name,
-            image: result.sprites['front_default'],
-            type: result.types.map((type) => type.type.name),
-            id: result.id,
-            height: (result.height)/10,
-            weight: (result.weight)/10,
-            stats: result.stats,
-            ability: result.abilities.map((ability) => ability.ability.name)
-        }));
-    });
-    window.open(`pokede-info.html?id=${id}`, "_self");
-
+    window.open(`pokede-info.html?id=${i + 1}`, "_self");
 }
 
 function buildCard(pokemon, i) {

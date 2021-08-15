@@ -25,11 +25,9 @@ class element {
 }
 
 class block {
-    constructor(species, evolves_to, minimum_level, item, evolution_details) {
+    constructor(species, evolves_to, evolution_details) {
         this.species = species;
         this.evolves_to = evolves_to;
-        this.minimum_level = minimum_level;
-        this.item = item;
         this.evolution_details = evolution_details;
     }
 }
@@ -133,15 +131,11 @@ async function findEvolutionChain() {
     const dataSpecies = await rawDataSpecies.json();
     const rawDataChain = await fetchData(dataSpecies.evolution_chain.url);
     const chain = await rawDataChain.json();
-        let a;
-        let b;
         let evo_path_ways_f;
         let evo_path_ways_s;
         let v;
         let w;
-        let x;
         let y;
-        let z;
         let finalone = [];
         let finaltwo = [];
         let final;
@@ -150,12 +144,6 @@ async function findEvolutionChain() {
                 for(let j = 0; j < chain.chain.evolves_to.length; j++) {
                     w = new element(chain.chain.evolves_to[j].species.name, chain.chain.evolves_to[j].species.url);
                     evo_path_ways_f = chain.chain.evolves_to[j].evolution_details;
-                    if(chain.chain.evolves_to[j].evolution_details[0].item != undefined) {
-                        x = new element(chain.chain.evolves_to[j].evolution_details[0].item.name, chain.chain.evolves_to[j].evolution_details[0].item.url);
-                    }
-                    if(chain.chain.evolves_to[j].evolution_details[0].min_level != undefined) {
-                        a = chain.chain.evolves_to[j].evolution_details[0].min_level;
-                    }
                     console.log("Daijobu Daijobu...");
                     if(chain.chain.evolves_to[j].evolves_to != undefined && chain.chain.evolves_to[j].evolves_to.length > 0) {
                         console.log("nasete...");
@@ -163,26 +151,19 @@ async function findEvolutionChain() {
                             console.log("Watashidakita!!");
                             evo_path_ways_s = chain.chain.evolves_to[j].evolves_to[k].evolution_details;
                             y = new element(chain.chain.evolves_to[j].evolves_to[k].species.name, chain.chain.evolves_to[j].evolves_to[k].species.url);
-                            if(chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].item != undefined) {
-                                z = new element(chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].item.name, chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].item.url);
-                                console.log(z);
-                            } 
-                            if(chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].min_level != undefined) {
-                                b = chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].min_level;
-                            }
-                            finalone.push(new block(y, null, b , z, evo_path_ways_f));
+                            finalone.push(new block(y, null, evo_path_ways_f));
                         }
-                        finaltwo.push(new block(w, finalone, a, x, evo_path_ways_s));
-                        final = new block(v, finaltwo, null, null, null);
+                        finaltwo.push(new block(w, finalone, evo_path_ways_s));
+                        final = new block(v, finaltwo, null);
                     } 
                     else {
-                        finalone.push(new block(w, null, a, x, evo_path_ways_f));
-                        final = new block(v, finalone, null, null, null);
+                        finalone.push(new block(w, null, evo_path_ways_f));
+                        final = new block(v, finalone, null);
                     }
                 }
             } 
             else {
-                final = new block(v, null, null, null, null);
+                final = new block(v, null, null);
             }
             theChain = final;
             console.log("We succeded!! YAY");

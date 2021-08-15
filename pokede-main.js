@@ -61,10 +61,14 @@ async function catchPokeData(rawurl) {
     return pokeJson;
 }
 
-async function buildTazo(pokemon, min_level, some_item) {
+function openPokedex(id) {
+    window.open(`pokede-info.html?id=${id}`, "_self");
+}
+
+async function buildTazo(pokemon) {
     const pokemonHTMLTazoRaw = [];
     pokemonHTMLTazoRaw.push(`
-        <li class="pokeTazo">
+        <li class="pokeTazo" onclick="openPokedex(${pokemon.id})">
             <img id = "tazo" src="${pokemon.image}" class="tazoImage"/>
             <div class="divisor-tazopokemon"></div>
             <h2 class="pokeinfo">${capitalize(pokemon.name)} - ${numberFormater(pokemon.id)}</h2>
@@ -77,27 +81,8 @@ async function buildTazo(pokemon, min_level, some_item) {
     pokemonHTMLTazoRaw.push(`
             </div>
             <div class="divisor-tazopokemon"></div>
-            <div class="evolution-requirements">`);
-    if(min_level != null) {
-        pokemonHTMLTazoRaw.push(`
-        <div class="evolveLevel"> Up to level: ${min_level}</div>
-    `);
-    }
-    else {
-        pokemonHTMLTazoRaw.push(`
-        <div class="evolveLevel"> No minimum level is required</div>
-    `);
-    }
-    if(some_item != null) {
-        const itemSprite = await catchItemPhoto(some_item.url);
-        pokemonHTMLTazoRaw.push(`
-            <div class="evolveItem">
-                <div class="itemName"> Requires: ${some_item.nick}</div>
-                <img id = "itemSprite" src="${itemSprite}" class="itemImage"/>
-            </div>
+            <div class="evolution-details" type="button">
         `);
-
-    }
     pokemonHTMLTazoRaw.push(`
             </div>
             <br>
@@ -114,19 +99,19 @@ async function loadEvolutionChain() {
     let firstEvolutionTazo = [];
     let secondEvolutionTazo = [];
     const indexPokemon = await catchPokeData(theChain.species.url);
-    const indexPokemonTazo =  await buildTazo(indexPokemon, theChain.minimum_level, theChain.item);
+    const indexPokemonTazo =  await buildTazo(indexPokemon);
     if(theChain.evolves_to != null) {
         for(let i = 0; i < theChain.evolves_to.length; i++) {
             const pokeFirstEvolution = theChain.evolves_to[i];
             const firstEvolution = await catchPokeData(pokeFirstEvolution.species.url);
-            firstEvolutionTazo.push(await buildTazo(firstEvolution, pokeFirstEvolution.minimum_level, pokeFirstEvolution.item));
+            firstEvolutionTazo.push(await buildTazo(firstEvolution));
             if(pokeFirstEvolution.evolves_to != null) {
                 console.log(pokeFirstEvolution.evolves_to.length);
                 for(let j = 0; j < pokeFirstEvolution.evolves_to.length; j++) {
                     const pokeSecondEvolution = theChain.evolves_to[i].evolves_to[j];
                     console.log(pokeSecondEvolution);
                     const secondEvolution = await catchPokeData(pokeSecondEvolution.species.url);
-                    secondEvolutionTazo.push(await buildTazo(secondEvolution, pokeSecondEvolution.minimum_level, pokeSecondEvolution.item));
+                    secondEvolutionTazo.push(await buildTazo(secondEvolution));
                 }
             }
         }
@@ -137,12 +122,13 @@ async function loadEvolutionChain() {
     thirdColumn.innerHTML = secondEvolutionTazo;
 }
 
-function pokedexPage1(pokemon) {
+async function pokedexPage1(pokemon) {
     if(thePokemon[0].name == undefined) {
         thePokemon = pokemon;
     }
     const pokedexPage1HTML = [];
     const button2HTML = [];
+
     pokedexPage1HTML.push(`
         <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
         <div class="pokeModel">    
