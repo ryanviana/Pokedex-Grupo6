@@ -8,7 +8,13 @@ const dictTypes = {
 }
 
 const dict3dSprites = {
-    "deoxys-normal" : "deoxys"
+    "deoxys-normal" : "deoxys",
+    "nidoran-f" : "nidoran_f",
+    "nidoran-m" : "nidoran_m",
+    "mr-mime" : "mr.mime",
+    "mr-rime" : "mr.rime",
+    "mime-jr" : "mime_jr",
+    "wormadam-plant" : "wormadam"
 }
 
 //Global VAR
@@ -140,11 +146,8 @@ async function findEvolutionChain() {
                 for(let j = 0; j < chain.chain.evolves_to.length; j++) {
                     w = new element(chain.chain.evolves_to[j].species.name, chain.chain.evolves_to[j].species.url);
                     evo_path_ways_f = chain.chain.evolves_to[j].evolution_details;
-                    console.log("Daijobu Daijobu...");
                     if(chain.chain.evolves_to[j].evolves_to != undefined && chain.chain.evolves_to[j].evolves_to.length > 0) {
-                        console.log("nasete...");
                         for(let k = 0; k < chain.chain.evolves_to[j].evolves_to.length; k++) {
-                            console.log("Watashidakita!!");
                             evo_path_ways_s = chain.chain.evolves_to[j].evolves_to[k].evolution_details;
                             y = new element(chain.chain.evolves_to[j].evolves_to[k].species.name, chain.chain.evolves_to[j].evolves_to[k].species.url);
                             finalone.push(new block(y, null, evo_path_ways_f));
@@ -162,9 +165,6 @@ async function findEvolutionChain() {
                 final = new block(v, null, null);
             }
             theChain = final;
-            console.log("We succeded!! YAY");
-            console.log(theChain.species.nick);
-            console.log(theChain);
 }
 
     // MAIN
