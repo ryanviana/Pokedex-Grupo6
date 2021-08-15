@@ -98,7 +98,9 @@ async function buildTazo(pokemon, k) {
 }
 
 async function cryBaby() {
-
+    const crySound = new Audio();
+    crySound.src = thePokemon[0].cry;
+    crySound.volume = 0.28;
 }
 
 async function loadEvolutionChain() {
@@ -176,8 +178,7 @@ function pokedexPage1(pokemon, faildOnce) {
     pokedexPage1HTML.push(`
         <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
         <div class="pokeModel">    
-            <img class="image-3DPokemon" src="${modelOnDisplay}" alt="this ${thePokemon[0].name} moves" onerror="callMe()"/>
-            <audio id="crypokemon" src="${thePokemon[0].cry}" autoplay ></audio>
+            <img class="image-3DPokemon" src="${modelOnDisplay}" alt="this ${thePokemon[0].name} moves" onerror="callMe()" onload="cryBaby()"/>
         </div>
         <div class="pokemonsDescription">
             <p class="pokeText">${thePokemon[0].info}</p>
@@ -233,7 +234,7 @@ function pokedexPage2() {
         <p>Types: ${thePokemon[0].type}</p>
         <p>Weakness: ${thePokemon[0].weakness} </p>
     </div>
-    <div class="damageWhenAttacked">Dammage when Attacked
+    <div class="damageWhenAttacked" style=" color : #fff">Dammage when Attacked
         <p>Double Damage: ${thePokemon[0].weakness}</p>
         <p>Half Damage: ${thePokemon[0].halfDamage}</p>
         <p>No Damage: ${thePokemon[0].noDamage}</p>
