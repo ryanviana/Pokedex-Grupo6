@@ -97,6 +97,10 @@ async function buildTazo(pokemon, k) {
     return pokemonHTMLTazoFinal;
 }
 
+async function cryBaby() {
+
+}
+
 async function loadEvolutionChain() {
     const firstColumn = document.getElementById('indexPokemon');
     const secondColumn = document.getElementById('firstEvolution');
@@ -168,11 +172,12 @@ function pokedexPage1(pokemon, faildOnce) {
     if(faildOnce) {
         modelOnDisplay = thePokemon[0].image;
     }
-
+    console.log(thePokemon[0].cry);
     pokedexPage1HTML.push(`
         <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
         <div class="pokeModel">    
             <img class="image-3DPokemon" src="${modelOnDisplay}" alt="this ${thePokemon[0].name} moves" onerror="callMe()"/>
+            <audio id="crypokemon" src="${thePokemon[0].cry}" autoplay ></audio>
         </div>
         <div class="pokemonsDescription">
             <p class="pokeText">${thePokemon[0].info}</p>
