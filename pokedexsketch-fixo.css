@@ -445,29 +445,36 @@ body {
 
 .middle {
     background-color: aquamarine;
-    display: grid;
+    display: list-item;
     width: auto;
-    overflow-y: scroll;
-    justify-content: space-evenly;
-    grid-template-columns: max-content;
-    max-height: fit-content;
-    grid-auto-rows: 50px;
+    overflow: auto;
+    max-height: 250px;
 }
 
+.right {
+    background-color: aquamarine;
+    display: list-item;
+    width: auto;
+    overflow: auto;
+    max-height: 250px;
+}
+
+
+
 .pokeinfo-inner {
-    font-family: "DM Sans", sans-serif;
-    color: white;
-    font-size: 20px;
+font-family: "DM Sans", sans-serif;
+color: white;
+font-size: 20px;
 }
 
 .tazoImage:hover{
-    cursor: pointer;
-    background-color: rgba(131, 134, 138, 0.52);
+cursor: pointer;
+background-color: rgba(131, 134, 138, 0.52);
 }
 
 .tazoImage {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    background-color: #56595f59;
+width: 96px;
+height: 96px;
+border-radius: 50%;
+background-color: #56595f59;
 }
