@@ -80,16 +80,7 @@ async function buildTazo(pokemon, k) {
     pokemonHTMLTazoRaw.push(`
         <li class="pokeTazo">
             <img id = "tazo" src="${pokemon.image}" class="tazoImage" onclick="openPokedex(${pokemon.id})"/>
-            <div class="divisor-tazopokemon"></div>
-            <h2 class="pokeinfo">${capitalize(pokemon.name)} - ${numberFormater(pokemon.id)}</h2>
-        `);
-    for(let i = 0; i < pokemon.type.length; i++) {
-        pokemonHTMLTazoRaw.push(`
-            <div class="poketype ${pokemon.type[i]}">${pokemon.type[i]} </div>
-        `);
-    }
-    pokemonHTMLTazoRaw.push(`
-            <div class="divisor-tazopokemon"></div>
+            <h2 class="pokeinfo-inner">${capitalize(pokemon.name)} - ${numberFormater(pokemon.id)}</h2>
         `);
 
     if(k != null) {
@@ -236,9 +227,9 @@ function pokedexPage3(pokemon) {
     <div class="evolutionPanel">
         <div class="arrow1" ></div>
         <div class="arrow2"></div>
-        <div class="leftColumn" id="indexPokemon"></div>
-        <div class="midleColumn" id="firstEvolution"></div>
-        <div class="rightColumn" id="secondEvolution"></div>
+        <div class="Column-ev left" id="indexPokemon"></div>
+        <div class="Column-ev middle" id="firstEvolution"></div>
+        <div class="Column-ev right" id="secondEvolution"></div>
     </div>
     </div>
     <div class="titleBar">
