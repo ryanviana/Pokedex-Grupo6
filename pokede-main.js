@@ -211,7 +211,11 @@ function pokedexPage2() {
         <p>Types: ${thePokemon[0].type}</p>
         <p>Weakness: ${thePokemon[0].weakness} </p>
     </div>
-    <div class="damageWhenAttacked">Dammage when Attacked</div>
+    <div class="damageWhenAttacked">Dammage when Attacked
+        <p>Double Damage: ${thePokemon[0].weakness}</p>
+        <p>Half Damage: ${thePokemon[0].halfDamage}</p>
+        <p>No Damage: ${thePokemon[0].noDamage}</p>
+    </div>
     `);
     button1HTML.push(`
         <div onclick="pokedexPage1()">

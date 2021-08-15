@@ -33,7 +33,7 @@ class block {
 }
 
 class PoketMonsterInfo {
-    constructor(name, image, type, id, image3d, abilities, stats, nameStat, weight, height, weakness, info) {
+    constructor(name, image, type, id, image3d, abilities, stats, nameStat, weight, height, weakness, info, halfDamage, noDamage) {
         this.name = name;
         this.image = image;
         this.image3d = image3d;
@@ -46,6 +46,8 @@ class PoketMonsterInfo {
         this.height = height;
         this.weakness = weakness;
         this.info = info;
+        this.halfDamage = halfDamage;
+        this.noDamage = noDamage;
     }
 }
 // Global VAR
@@ -75,6 +77,8 @@ const fetchOnePoke = async (url) => {
             let url3;
             const promises2 = [];
             const pWeakness = [];
+            const pDamageHalf = [];
+            const pNoDamage = [];
             promises2.push(fetch(url2).then((res) => res.json()));
 
             const promisesInfo = [];
@@ -82,10 +86,13 @@ const fetchOnePoke = async (url) => {
             Promise.all(promisesInfo).then((resultsInfo) => {
                 resultsInfo.map((resultInfo) => {
                     pInfo = resultInfo.flavor_text_entries[0].flavor_text;
+                    console.log (pInfo);
                     Promise.all(promises2).then((results2) => {
                         results2.map((result2) => {
                             pWeakness [0] = result2.damage_relations.double_damage_from.map((name) => name.name).join(', ');
-                            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness[0], pInfo));
+                            pDamageHalf [0] = result2.damage_relations.half_damage_from.map((name) => name.name).join(', ');
+                            pNoDamage [0] = result2.damage_relations.no_damage_from.map((name) => name.name).join(', ');
+                            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness[0], pInfo, pDamageHalf[0], pNoDamage[0]));
                         });
                         if(result.types[1] != undefined) {
                             pcode.push(dictTypes[`${result.types[1].type.name}`]);
@@ -96,7 +103,11 @@ const fetchOnePoke = async (url) => {
                                 results3.map((result3) => {
                                     pWeakness [1] = result3.damage_relations.double_damage_from.map((name) => name.name).join(', ');
                                     pWeakness.join(', ');
-                                    thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness, pInfo));
+                                    pDamageHalf [1] = result3.damage_relations.half_damage_from.map((name) => name.name).join(', ');
+                                    pDamageHalf.join(', ');
+                                    pNoDamage [1] = result3.damage_relations.no_damage_from.map((name) => name.name).join(', ');
+                                    pNoDamage.join(', ');
+                                    thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness, pInfo, pDamageHalf, pNoDamage));
                                 });
                                 findEvolutionChain(thePokemon);
                                 pokedexPage1(thePokemon);  
