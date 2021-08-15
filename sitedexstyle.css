@@ -39,8 +39,6 @@ table#barra-titulo {
 }
 
 .pokebola {
-    margin-top: 27px ;
-    margin-left: 5px;
     animation: shake 1.75s cubic-bezier(.36,.07,.19,.97) infinite;
     animation-play-state: paused;
 }
