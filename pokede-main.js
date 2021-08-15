@@ -99,8 +99,9 @@ async function buildTazo(pokemon, k) {
 
 async function cryBaby() {
     const crySound = new Audio();
+    console.log(thePokemon[0].cry);
     crySound.src = thePokemon[0].cry;
-    crySound.volume = 0.28;
+    crySound.volume = 0.5;
 }
 
 async function loadEvolutionChain() {
@@ -178,7 +179,7 @@ function pokedexPage1(pokemon, faildOnce) {
     pokedexPage1HTML.push(`
         <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
         <div class="pokeModel">    
-            <img class="image-3DPokemon" src="${modelOnDisplay}" alt="this ${thePokemon[0].name} moves" onerror="callMe()" onload="cryBaby()"/>
+            <img class="image-3DPokemon" src="${modelOnDisplay}" alt="this ${thePokemon[0].name} moves" onerror="callMe()" onclick="cryBaby()"/>
         </div>
         <div class="pokemonsDescription">
             <p class="pokeText">${thePokemon[0].info}</p>
