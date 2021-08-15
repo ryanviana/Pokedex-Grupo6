@@ -145,17 +145,14 @@ async function model3dDebuger(errorurl) {
     let dotGif = splitedUrl[5].split(".");
     let maybeTheCorectName;
     try {
-        console.log(dotGif);
         maybeTheCorectName = dict3dSprites[`${dotGif[0]}`];
     }
     catch {
-        console.log("Deu ruim");
         maybeTheCorectName = dotGif[0];
     }
     dotGif[0] = maybeTheCorectName;
     splitedUrl[5] = dotGif.join(".");
     const newUrl = splitedUrl.join("/");
-    console.log(newUrl);
     return newUrl;
 }
 
