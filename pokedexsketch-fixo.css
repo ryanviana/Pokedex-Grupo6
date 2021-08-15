@@ -461,7 +461,9 @@ body {
     animation: HUD-fade-in 1.5s linear 1.7s forwards;
 }
 
-
+.image-3DPokemon {
+    cursor: pointer;
+}
 
 .pokeinfo-inner {
 font-family: "DM Sans", sans-serif;
