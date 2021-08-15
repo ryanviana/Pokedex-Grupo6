@@ -101,7 +101,7 @@ async function cryBaby() {
     const crySound = new Audio();
     console.log(thePokemon[0].cry);
     crySound.src = thePokemon[0].cry;
-    crySound.volume = 0.5;
+    crySound.volume = 0.05;
     crySound.play();
 }
 
