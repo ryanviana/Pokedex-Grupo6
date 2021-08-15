@@ -443,6 +443,17 @@ body {
     position: relative;
 }
 
+.middle {
+    background-color: aquamarine;
+    display: grid;
+    width: auto;
+    overflow-y: scroll;
+    justify-content: space-evenly;
+    grid-template-columns: max-content;
+    max-height: fit-content;
+    grid-auto-rows: 50px;
+}
+
 .pokeinfo-inner {
     font-family: "DM Sans", sans-serif;
     color: white;

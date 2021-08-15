@@ -82,13 +82,13 @@ async function buildTazo(pokemon, k) {
             <img id = "tazo" src="${pokemon.image}" class="tazoImage" onclick="openPokedex(${pokemon.id})"/>
             <h2 class="pokeinfo-inner">${capitalize(pokemon.name)} - ${numberFormater(pokemon.id)}</h2>
         `);
-
+/*
     if(k != null) {
         pokemonHTMLTazoRaw.push(`
             <div class="evolution-details" type="button" onclick="showEvolutionDetails(${k})">Evolutions Deatils</div>
         `);
     }
-
+*/
     pokemonHTMLTazoRaw.push(`
             <br>
         </li>
