@@ -278,6 +278,15 @@ body {
     animation: HUD-fade-in 1.5s linear 0.8s forwards;
 }
 
+.evolution-details{
+    position:absolute;
+    background-color: tomato;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
 .typesNdWeaknesses {
     opacity: 0;
     font-family: "DM Sans", sans-serif;
