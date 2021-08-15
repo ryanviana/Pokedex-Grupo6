@@ -78,7 +78,6 @@ const fetchOnePoke = async (url) => {
             const promises2 = [];
             const pWeakness = [];
             const pDamageHalf = [];
-            const pNoDamage = [];
             promises2.push(fetch(url2).then((res) => res.json()));
 
             const promisesInfo = [];
@@ -91,8 +90,6 @@ const fetchOnePoke = async (url) => {
                         results2.map((result2) => {
                             pWeakness [0] = result2.damage_relations.double_damage_from.map((name) => name.name).join(', ');
                             pDamageHalf [0] = result2.damage_relations.half_damage_from.map((name) => name.name).join(', ');
-                            pNoDamage [0] = result2.damage_relations.no_damage_from.map((name) => name.name).join(', ');
-                            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness[0], pInfo, pDamageHalf[0], pNoDamage[0]));
                         });
                         if(result.types[1] != undefined) {
                             pcode.push(dictTypes[`${result.types[1].type.name}`]);
@@ -105,8 +102,7 @@ const fetchOnePoke = async (url) => {
                                     pWeakness.join(', ');
                                     pDamageHalf [1] = result3.damage_relations.half_damage_from.map((name) => name.name).join(', ');
                                     pDamageHalf.join(', ');
-                                    pNoDamage [1] = result3.damage_relations.no_damage_from.map((name) => name.name).join(', ');
-                                    pNoDamage.join(', ');
+                                    pNoDamage = result3.damage_relations.no_damage_from.map((name) => name.name).join(', ');
                                     thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness, pInfo, pDamageHalf, pNoDamage));
                                 });
                                 findEvolutionChain(thePokemon);
@@ -114,6 +110,7 @@ const fetchOnePoke = async (url) => {
                             });
                         }
                         else {
+                            thePokemon.push(new PoketMonsterInfo(pname, pimage, ptype, pid, pimage3d, pabilities, pstats, pNameStats, pweight, pheight, pWeakness[0], pInfo, pDamageHalf[0], '-'));
                             findEvolutionChain(thePokemon);
                             pokedexPage1(thePokemon);
                         }
