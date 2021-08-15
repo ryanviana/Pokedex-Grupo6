@@ -30,9 +30,12 @@ function numberFormater(number) {
 
 //
 async function catchItemPhoto(url) {
+    console.log(url);
     apiData = await fetchData(url);
     myItem = await apiData.json();
-    return myItem.sprites.front_default;
+    
+    console.log(myItem.sprites);
+    return myItem.sprites.default;
 }
 
 async function catchPokeData(rawurl) {
@@ -77,7 +80,7 @@ async function buildTazo(pokemon, min_level, some_item) {
             <div class="evolution-requirements">`);
     if(min_level != null) {
         pokemonHTMLTazoRaw.push(`
-        <div class="evolveLevel"> Up to level: ${some_item.nick}</div>
+        <div class="evolveLevel"> Up to level: ${min_level}</div>
     `);
     }
     else {

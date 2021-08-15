@@ -7,6 +7,10 @@ const dictTypes = {
     "dragon" : "16","dark" : "17", "fairy" : "18"
 }
 
+const dict3dSprites = {
+    "deoxys-normal" : "deoxys"
+}
+
 //Global VAR
 const ecra = document.getElementById('ecra');
 const displayLeft = document.getElementById('displayLeft');
@@ -21,11 +25,12 @@ class element {
 }
 
 class block {
-    constructor(species, evolves_to, minimum_level, item) {
+    constructor(species, evolves_to, minimum_level, item, evolution_details) {
         this.species = species;
         this.evolves_to = evolves_to;
         this.minimum_level = minimum_level;
         this.item = item;
+        this.evolution_details = evolution_details;
     }
 }
 
@@ -100,6 +105,27 @@ const fetchOnePoke = async (url) => {
     });
 });
 }
+/*
+async function catchPokemon(url) {
+    const rawPokeJson = await fetchData(url);
+    const result = await fetchData(rawPokeJson);
+    const pname = result.name;
+    const pimage = result.sprites['front_default'];
+    const ptype = result.types.map((type) => type.type.name).join(', ');
+    const pid = result.id;
+    const pimage3d = `https://projectpokemon.org/images/normal-sprite/${pname}.gif`;
+    const pabilities = result.abilities.map((ability) => ability.ability.name).join(', ');
+    const pstats = result.stats.map((base_stat) => base_stat.base_stat);
+    const pNameStats = result.stats.map((stat) => stat.stat.name);
+    const pweight = result.weight/10;
+    const pheight = result.height/10;
+    let pcode = [];
+    pcode.push(dictTypes[`${result.types[0].type.name}`]);
+    const url2 = `https://pokeapi.co/api/v2/type/${pcode[0]}`;
+    let url3;
+    const promises2 = [];
+    const pWeakness = [];
+}*/
 
 async function findEvolutionChain() {
     const pokeUrl = `https://pokeapi.co/api/v2/pokemon-species/${idFound}/`;
@@ -109,6 +135,8 @@ async function findEvolutionChain() {
     const chain = await rawDataChain.json();
         let a;
         let b;
+        let evo_path_ways_f;
+        let evo_path_ways_s;
         let v;
         let w;
         let x;
@@ -118,45 +146,48 @@ async function findEvolutionChain() {
         let finaltwo = [];
         let final;
             v = new element(chain.chain.species.name, chain.chain.species.url);
-    
             if(chain.chain.evolves_to != undefined && chain.chain.evolves_to.length > 0) {
                 for(let j = 0; j < chain.chain.evolves_to.length; j++) {
                     w = new element(chain.chain.evolves_to[j].species.name, chain.chain.evolves_to[j].species.url);
-                    if(chain.chain.evolves_to[j].evolution_details.item != undefined) {
-                        x = new element(chain.chain.evolves_to[j].evolution_details.item.name, chain.chain.evolves_to[j].evolution_details.item.url);
+                    evo_path_ways_f = chain.chain.evolves_to[j].evolution_details;
+                    if(chain.chain.evolves_to[j].evolution_details[0].item != undefined) {
+                        x = new element(chain.chain.evolves_to[j].evolution_details[0].item.name, chain.chain.evolves_to[j].evolution_details[0].item.url);
                     }
-                    if(chain.chain.evolves_to[j].evolution_details.min_level != undefined) {
-                        a = hain.chain.evolves_to[j].evolution_details.min_level;
+                    if(chain.chain.evolves_to[j].evolution_details[0].min_level != undefined) {
+                        a = chain.chain.evolves_to[j].evolution_details[0].min_level;
                     }
                     console.log("Daijobu Daijobu...");
                     if(chain.chain.evolves_to[j].evolves_to != undefined && chain.chain.evolves_to[j].evolves_to.length > 0) {
                         console.log("nasete...");
                         for(let k = 0; k < chain.chain.evolves_to[j].evolves_to.length; k++) {
                             console.log("Watashidakita!!");
+                            evo_path_ways_s = chain.chain.evolves_to[j].evolves_to[k].evolution_details;
                             y = new element(chain.chain.evolves_to[j].evolves_to[k].species.name, chain.chain.evolves_to[j].evolves_to[k].species.url);
-                            if(chain.chain.evolves_to[j].evolves_to[k].evolution_details.item != undefined) {
-                                z = new element(chain.chain.evolves_to[j].evolves_to[k].evolution_details.item.name, chain.chain.evolves_to[j].evolves_to[k].evolution_details.item.url);
+                            if(chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].item != undefined) {
+                                z = new element(chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].item.name, chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].item.url);
+                                console.log(z);
+                            } 
+                            if(chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].min_level != undefined) {
+                                b = chain.chain.evolves_to[j].evolves_to[k].evolution_details[0].min_level;
                             }
-                            if(chain.chain.evolves_to[j].evolves_to[k].evolution_details.min_level != undefined) {
-                                b = chain.chain.evolves_to[j].evolves_to[k].evolution_details.min_level;
-                            }
-                            finalone.push(new block(y, null,b, z));
+                            finalone.push(new block(y, null, b , z, evo_path_ways_f));
                         }
-                        finaltwo.push(new block(w, finalone, a, x));
-                        final = new block(v, finaltwo, null, null);
+                        finaltwo.push(new block(w, finalone, a, x, evo_path_ways_s));
+                        final = new block(v, finaltwo, null, null, null);
                     } 
                     else {
-                        finalone.push(new block(w, null, a, x));
-                        final = new block(v, finalone, null, null);
+                        finalone.push(new block(w, null, a, x, evo_path_ways_f));
+                        final = new block(v, finalone, null, null, null);
                     }
                 }
             } 
             else {
-                final = new block(v, null, null, null);
+                final = new block(v, null, null, null, null);
             }
             theChain = final;
             console.log("We succeded!! YAY");
             console.log(theChain.species.nick);
+            console.log(theChain);
 }
 
     // MAIN
