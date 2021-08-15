@@ -121,18 +121,24 @@ async function loadEvolutionChain() {
     secondColumn.innerHTML = firstEvolutionTazo;
     thirdColumn.innerHTML = secondEvolutionTazo;
 }
-
-async function pokedexPage1(pokemon) {
+function callMe() {
+    pokedexPage1(thePokemon, 1);
+}
+function pokedexPage1(pokemon, faildOnce) {
     if(thePokemon[0].name == undefined) {
         thePokemon = pokemon;
     }
     const pokedexPage1HTML = [];
     const button2HTML = [];
+    let modelOnDisplay = thePokemon[0].image3d;
+    if(faildOnce) {
+        modelOnDisplay = thePokemon[0].image;
+    }
 
     pokedexPage1HTML.push(`
         <div class="titleBar"> ${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
         <div class="pokeModel">    
-            <img class="image-3DPokemon" src="${thePokemon[0].image3d}" alt="this ${thePokemon[0].name} moves"/>
+            <img class="image-3DPokemon" src="${modelOnDisplay}" alt="this ${thePokemon[0].name} moves" onerror="callMe()"/>
         </div>
         <div class="pokemonsDescription">
             <p class="pokeText">Here will be the pokemon's description</p>
