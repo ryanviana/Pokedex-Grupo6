@@ -103,27 +103,6 @@ const fetchOnePoke = async (url) => {
     });
 });
 }
-/*
-async function catchPokemon(url) {
-    const rawPokeJson = await fetchData(url);
-    const result = await fetchData(rawPokeJson);
-    const pname = result.name;
-    const pimage = result.sprites['front_default'];
-    const ptype = result.types.map((type) => type.type.name).join(', ');
-    const pid = result.id;
-    const pimage3d = `https://projectpokemon.org/images/normal-sprite/${pname}.gif`;
-    const pabilities = result.abilities.map((ability) => ability.ability.name).join(', ');
-    const pstats = result.stats.map((base_stat) => base_stat.base_stat);
-    const pNameStats = result.stats.map((stat) => stat.stat.name);
-    const pweight = result.weight/10;
-    const pheight = result.height/10;
-    let pcode = [];
-    pcode.push(dictTypes[`${result.types[0].type.name}`]);
-    const url2 = `https://pokeapi.co/api/v2/type/${pcode[0]}`;
-    let url3;
-    const promises2 = [];
-    const pWeakness = [];
-}*/
 
 async function findEvolutionChain() {
     const pokeUrl = `https://pokeapi.co/api/v2/pokemon-species/${idFound}/`;

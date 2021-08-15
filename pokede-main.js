@@ -138,8 +138,36 @@ async function loadEvolutionChain() {
     secondColumn.innerHTML = firstEvolutionTazo;
     thirdColumn.innerHTML = secondEvolutionTazo;
 }
-function callMe() {
-    pokedexPage1(thePokemon, 1);
+
+/*`https://projectpokemon.org/images/normal-sprite/${pname}.gif`*/
+async function model3dDebuger(errorurl) {
+    let splitedUrl = errorurl.split("/");
+    let dotGif = splitedUrl[5].split(".");
+    let maybeTheCorectName;
+    try {
+        console.log(dotGif);
+        maybeTheCorectName = dict3dSprites[`${dotGif[0]}`];
+    }
+    catch {
+        console.log("Deu ruim");
+        maybeTheCorectName = dotGif[0];
+    }
+    dotGif[0] = maybeTheCorectName;
+    splitedUrl[5] = dotGif.join(".");
+    const newUrl = splitedUrl.join("/");
+    console.log(newUrl);
+    return newUrl;
+}
+
+async function callMe() {
+    const oldGifUrl = thePokemon[0].image3d;
+    thePokemon[0].image3d = await model3dDebuger(thePokemon[0].image3d);
+    if(oldGifUrl == thePokemon[0].image3d) {
+        pokedexPage1(thePokemon, 1);
+    }
+    else {
+        pokedexPage1(thePokemon, 0);
+    }
 }
 function pokedexPage1(pokemon, faildOnce) {
     if(thePokemon[0].name == undefined) {
