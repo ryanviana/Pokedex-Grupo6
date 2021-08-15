@@ -160,6 +160,18 @@ function pokedexPage1(pokemon, faildOnce) {
     ecra.innerHTML = pokedexPage1HTML;
 }
 
+function alertStatusName(i) {
+    window.alert(capitalize(thePokemon[0].nameStat[i]));
+}
+
+/*
+Statuses
+<p>${capitalize(thePokemon[0].nameStat[0])}: ${thePokemon[0].stats[0]}</p>
+        <p>${capitalize(thePokemon[0].nameStat[1])}: ${thePokemon[0].stats[1]}</p>
+        <p>${capitalize(thePokemon[0].nameStat[2])}: ${thePokemon[0].stats[2]}</p>
+        <p>${capitalize(thePokemon[0].nameStat[3])}: ${thePokemon[0].stats[3]}</p>
+        <p>${capitalize(thePokemon[0].nameStat[4])}: ${thePokemon[0].stats[4]}</p>
+*/
 function pokedexPage2() {
     const pokedexPage2HTML = [];
     const button1HTML = [];
@@ -167,11 +179,16 @@ function pokedexPage2() {
     pokedexPage2HTML.push(`
     <div class="nameNote">${capitalize(thePokemon[0].name)} - Nº${numberFormater(idFound)}</div>
     <div class="statusTable">Statuses
-        <p>${capitalize(thePokemon[0].nameStat[0])}: ${thePokemon[0].stats[0]}</p>
-        <p>${capitalize(thePokemon[0].nameStat[1])}: ${thePokemon[0].stats[1]}</p>
-        <p>${capitalize(thePokemon[0].nameStat[2])}: ${thePokemon[0].stats[2]}</p>
-        <p>${capitalize(thePokemon[0].nameStat[3])}: ${thePokemon[0].stats[3]}</p>
-        <p>${capitalize(thePokemon[0].nameStat[4])}: ${thePokemon[0].stats[4]}</p>
+        <div class="columnBar" style="height: ${(thePokemon[0].stats[0]/ 180) * 260}px; margin-left : 8%">${thePokemon[0].stats[0]}</div>
+        <div class="columnBar" style="height: ${(thePokemon[0].stats[1]/ 180) * 260}px; margin-left : 26%">${thePokemon[0].stats[1]}</div>
+        <div class="columnBar" style="height: ${(thePokemon[0].stats[2]/ 180) * 260}px; margin-left : 44%">${thePokemon[0].stats[2]}</div>
+        <div class="columnBar" style="height: ${(thePokemon[0].stats[3]/ 180) * 260}px; margin-left : 62%">${thePokemon[0].stats[3]}</div>
+        <div class="columnBar" style="height: ${(thePokemon[0].stats[4]/ 180) * 260}px; margin-left : 80%">${thePokemon[0].stats[4]}</div>
+        <div class="columnBarName" style="margin-left : 8%" onclick="alertStatusName(0)">Hp</div>
+        <div class="columnBarName" style="margin-left : 26%" onclick="alertStatusName(1)">Atk</div>
+        <div class="columnBarName" style="margin-left : 44%" onclick="alertStatusName(2)">Dfs</div>
+        <div class="columnBarName" style="margin-left : 62%" onclick="alertStatusName(3)">SAtk</div>
+        <div class="columnBarName" style="margin-left : 80%" onclick="alertStatusName(4)">SDfs</div>
     </div>
     <div class="typesNdWeaknesses">Types and Weaknesses
         <p>Types: ${thePokemon[0].type}</p>

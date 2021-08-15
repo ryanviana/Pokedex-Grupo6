@@ -237,6 +237,7 @@ body {
 .statusTable {
     opacity: 0;
     font-family: "DM Sans", sans-serif;
+    font-size: large;
     text-align: center;
     left: 5px;
     margin-left: 27px;
@@ -247,10 +248,33 @@ body {
     height: 280px;
     position: absolute;
     background-color: #8C8C8C;
-    color: black;
+    color: rgb(255, 255, 255);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
+    animation: HUD-fade-in 1.5s linear 0.8s forwards;
+}
+
+.columnBar {
+    position: absolute;
+    background-color: #157795;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-size: small;
+    text-align: center;
+    width: 30px;
+    bottom: 20px;
+    animation: HUD-fade-in 1.5s linear 0.8s forwards;
+}
+
+.columnBarName {
+    position: absolute;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-size: medium;
+    text-align: center;
+    width: 30px;
+    bottom: 0px;
     animation: HUD-fade-in 1.5s linear 0.8s forwards;
 }
 
