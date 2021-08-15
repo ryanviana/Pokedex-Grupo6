@@ -220,10 +220,14 @@ body {
         transform: rotate(0deg);
     }
 
-    100% {
+    99% {
         opacity: 0;
         transform: rotate(620deg);
     }
 
+    100% {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
 
 }
