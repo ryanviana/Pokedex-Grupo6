@@ -111,7 +111,6 @@ async function loadEvolutionChain() {
             const firstEvolution = await catchPokeData(pokeFirstEvolution.species.url);
             firstEvolutionTazo.push(await buildTazo(firstEvolution, i*10));
             if(pokeFirstEvolution.evolves_to != null) {
-                console.log(pokeFirstEvolution.evolves_to.length);
                 for(let j = 0; j < pokeFirstEvolution.evolves_to.length; j++) {
                     const pokeSecondEvolution = theChain.evolves_to[i].evolves_to[j];
                     console.log(pokeSecondEvolution);
