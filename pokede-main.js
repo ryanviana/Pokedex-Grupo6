@@ -102,6 +102,7 @@ async function cryBaby() {
     console.log(thePokemon[0].cry);
     crySound.src = thePokemon[0].cry;
     crySound.volume = 0.5;
+    crySound.play();
 }
 
 async function loadEvolutionChain() {
