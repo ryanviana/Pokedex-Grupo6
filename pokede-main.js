@@ -129,7 +129,7 @@ async function loadEvolutionChain() {
         }
     }
     else{
-        firstEvolutionTazo = `<div class="notEvolve">This Pokémon does not evolve</div>`;
+        firstEvolutionTazo.push(`<div class="notEvolve">This Pokémon does not evolve</div>`);
     }
     const indexPokemonTazoFinal = indexPokemonTazo;
     const firstEvolutionTazoFinal = firstEvolutionTazo.join(' ');
